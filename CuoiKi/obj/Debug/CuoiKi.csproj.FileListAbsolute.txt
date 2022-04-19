@@ -1,0 +1,13 @@
+C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\CuoiKi.exe.config
+C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\CuoiKi.exe
+C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\CuoiKi.pdb
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.Form1.resources
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.Properties.Resources.resources
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.exe
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.pdb
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.DangNhap.resources
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.GiaoDien.resources
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.QuanLi.resources
