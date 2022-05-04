@@ -21,5 +21,26 @@ namespace CuoiKi
         {
 
         }
+
+        private void btn_DN_Click(object sender, EventArgs e)
+        {
+            GiaoDien giaoDien = new GiaoDien();
+            giaoDien.Show();
+            this.Hide();
+            giaoDien.DangXuat += GiaoDien_DangXuat;
+
+        }
+
+        private void GiaoDien_DangXuat(object sender, EventArgs e)
+        {
+            this.Show();
+            (sender as GiaoDien).isExit = false;
+            (sender as GiaoDien).Close();
+        }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
