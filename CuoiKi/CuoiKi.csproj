@@ -114,5 +114,29 @@
   <ItemGroup>
     <None Include="Resources\ROG_wallpaper_G.A.M.E.R.s-Squad_fhd.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bán hàng.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hóa Đơn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NhanVien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XemHoaDon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hàng Hóa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hoadon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thoát.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

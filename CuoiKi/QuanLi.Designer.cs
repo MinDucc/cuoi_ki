@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1319, 727);
             this.Name = "QuanLi";
-            this.Text = "Quản_lí";
+            this.Text = "Quản lí";
             this.ResumeLayout(false);
 
         }
