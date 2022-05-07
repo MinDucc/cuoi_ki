@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CuoiKi
 {
-    public partial class Form1 : Form
+    public partial class HoaDon : Form
     {
-        public Form1()
+        public HoaDon()
         {
             InitializeComponent();
         }
@@ -37,6 +37,18 @@ namespace CuoiKi
 
         }
 
-        
+        private void cbx_chon_item_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbx_chon_item.SelectedItem != null)
+            {
+                lbl_ten_item.Text = cbx_chon_item.SelectedItem.ToString(); 
+            }
+        }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            ListViewItem lvi = new ListViewItem(lbl_ten_item.Text);
+            lv_item.Items.Add(lvi);
+        }
     }
 }

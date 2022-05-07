@@ -1,6 +1,6 @@
 ﻿namespace CuoiKi
 {
-    partial class Form1
+    partial class HoaDon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.tb_tenkhach = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btn_back = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
+            this.lbl_tienthua = new System.Windows.Forms.Label();
+            this.tb_tiennhan = new System.Windows.Forms.TextBox();
+            this.lbl_thanhtien = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_id = new System.Windows.Forms.Label();
+            this.tb_dongia = new System.Windows.Forms.TextBox();
+            this.tb_sl = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_ten_item = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbx_chon_item = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lv_item = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -74,13 +71,13 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.tb_tenkhach);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.btn_back);
+            this.panel1.Controls.Add(this.btn_luu);
+            this.panel1.Controls.Add(this.lbl_tienthua);
+            this.panel1.Controls.Add(this.tb_tiennhan);
+            this.panel1.Controls.Add(this.lbl_thanhtien);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -90,47 +87,64 @@
             this.panel1.Size = new System.Drawing.Size(329, 338);
             this.panel1.TabIndex = 0;
             // 
-            // button3
+            // tb_tenkhach
             // 
-            this.button3.Location = new System.Drawing.Point(163, 279);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 27);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Trở về";
-            this.button3.UseVisualStyleBackColor = true;
+            this.tb_tenkhach.Location = new System.Drawing.Point(114, 210);
+            this.tb_tenkhach.Multiline = true;
+            this.tb_tenkhach.Name = "tb_tenkhach";
+            this.tb_tenkhach.Size = new System.Drawing.Size(173, 25);
+            this.tb_tenkhach.TabIndex = 13;
             // 
-            // button5
+            // label14
             // 
-            this.button5.Location = new System.Drawing.Point(3, 276);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(124, 32);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Lưu Hóa Đơn";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 218);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(111, 17);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Tên khách hàng";
             // 
-            // label11
+            // btn_back
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(111, 162);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(176, 25);
-            this.label11.TabIndex = 10;
+            this.btn_back.Location = new System.Drawing.Point(163, 279);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(130, 27);
+            this.btn_back.TabIndex = 11;
+            this.btn_back.Text = "Trở về";
+            this.btn_back.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // btn_luu
             // 
-            this.textBox4.Location = new System.Drawing.Point(111, 101);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 25);
-            this.textBox4.TabIndex = 9;
+            this.btn_luu.Location = new System.Drawing.Point(3, 276);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(124, 32);
+            this.btn_luu.TabIndex = 6;
+            this.btn_luu.Text = "Lưu Hóa Đơn";
+            this.btn_luu.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // lbl_tienthua
             // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(114, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(179, 25);
-            this.label10.TabIndex = 6;
+            this.lbl_tienthua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_tienthua.Location = new System.Drawing.Point(111, 162);
+            this.lbl_tienthua.Name = "lbl_tienthua";
+            this.lbl_tienthua.Size = new System.Drawing.Size(176, 25);
+            this.lbl_tienthua.TabIndex = 10;
+            // 
+            // tb_tiennhan
+            // 
+            this.tb_tiennhan.Location = new System.Drawing.Point(111, 101);
+            this.tb_tiennhan.Multiline = true;
+            this.tb_tiennhan.Name = "tb_tiennhan";
+            this.tb_tiennhan.Size = new System.Drawing.Size(176, 25);
+            this.tb_tiennhan.TabIndex = 9;
+            // 
+            // lbl_thanhtien
+            // 
+            this.lbl_thanhtien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_thanhtien.Location = new System.Drawing.Point(114, 53);
+            this.lbl_thanhtien.Name = "lbl_thanhtien";
+            this.lbl_thanhtien.Size = new System.Drawing.Size(179, 25);
+            this.lbl_thanhtien.TabIndex = 6;
             // 
             // label4
             // 
@@ -173,37 +187,63 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.lbl_id);
+            this.panel2.Controls.Add(this.tb_dongia);
+            this.panel2.Controls.Add(this.tb_sl);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lbl_ten_item);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.btn_them);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(904, 16);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 278);
             this.panel2.TabIndex = 7;
             // 
-            // textBox3
+            // button2
             // 
-            this.textBox3.Location = new System.Drawing.Point(114, 175);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(133, 25);
-            this.textBox3.TabIndex = 9;
+            this.button2.Location = new System.Drawing.Point(3, 218);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Tìm hàng hóa";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // button1
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(114, 127);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 25);
-            this.textBox2.TabIndex = 8;
+            this.button1.Location = new System.Drawing.Point(163, 218);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Tìm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_id.Location = new System.Drawing.Point(114, 13);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(133, 25);
+            this.lbl_id.TabIndex = 10;
+            // 
+            // tb_dongia
+            // 
+            this.tb_dongia.Location = new System.Drawing.Point(114, 175);
+            this.tb_dongia.Multiline = true;
+            this.tb_dongia.Name = "tb_dongia";
+            this.tb_dongia.Size = new System.Drawing.Size(133, 25);
+            this.tb_dongia.TabIndex = 9;
+            // 
+            // tb_sl
+            // 
+            this.tb_sl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_sl.Location = new System.Drawing.Point(114, 127);
+            this.tb_sl.Multiline = true;
+            this.tb_sl.Name = "tb_sl";
+            this.tb_sl.Size = new System.Drawing.Size(133, 25);
+            this.tb_sl.TabIndex = 8;
             // 
             // label9
             // 
@@ -224,13 +264,13 @@
             this.label8.Text = "Số Lượng ";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // label7
+            // lbl_ten_item
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(114, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
-            this.label7.TabIndex = 5;
+            this.lbl_ten_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_ten_item.Location = new System.Drawing.Point(114, 70);
+            this.lbl_ten_item.Name = "lbl_ten_item";
+            this.lbl_ten_item.Size = new System.Drawing.Size(133, 25);
+            this.lbl_ten_item.TabIndex = 5;
             // 
             // label6
             // 
@@ -243,20 +283,21 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(181, 247);
+            this.textBox1.Location = new System.Drawing.Point(170, 247);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(123, 22);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Xóa khỏi hóa đơn";
             // 
-            // button6
+            // btn_them
             // 
-            this.button6.Location = new System.Drawing.Point(3, 247);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(157, 25);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Thêm vào hóa đơn";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_them.Location = new System.Drawing.Point(3, 247);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(157, 25);
+            this.btn_them.TabIndex = 2;
+            this.btn_them.Text = "Thêm vào hóa đơn";
+            this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // label5
             // 
@@ -270,14 +311,33 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.listView2);
+            this.panel4.Controls.Add(this.cbx_chon_item);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.listView1);
+            this.panel4.Controls.Add(this.lv_item);
             this.panel4.Location = new System.Drawing.Point(10, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(879, 626);
             this.panel4.TabIndex = 9;
+            // 
+            // cbx_chon_item
+            // 
+            this.cbx_chon_item.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbx_chon_item.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbx_chon_item.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbx_chon_item.FormattingEnabled = true;
+            this.cbx_chon_item.Items.AddRange(new object[] {
+            "ca trung muoi",
+            "ca long tong",
+            "ca trach",
+            "ca tra",
+            "ca qua",
+            "ca duoi"});
+            this.cbx_chon_item.Location = new System.Drawing.Point(706, 3);
+            this.cbx_chon_item.Name = "cbx_chon_item";
+            this.cbx_chon_item.Size = new System.Drawing.Size(168, 617);
+            this.cbx_chon_item.TabIndex = 8;
+            this.cbx_chon_item.SelectedIndexChanged += new System.EventHandler(this.cbx_chon_item_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -296,26 +356,24 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "Tổng cộng";
             // 
-            // listView1
+            // lv_item
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lv_item.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.lv_item.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8});
-            this.listView1.Location = new System.Drawing.Point(3, -1);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(637, 573);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lv_item.FullRowSelect = true;
+            this.lv_item.GridLines = true;
+            this.lv_item.HideSelection = false;
+            this.lv_item.Location = new System.Drawing.Point(3, 3);
+            this.lv_item.Name = "lv_item";
+            this.lv_item.Size = new System.Drawing.Size(697, 573);
+            this.lv_item.TabIndex = 2;
+            this.lv_item.UseCompatibleStateImageBehavior = false;
+            this.lv_item.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -325,7 +383,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên Hàng";
-            this.columnHeader2.Width = 209;
+            this.columnHeader2.Width = 194;
             // 
             // columnHeader3
             // 
@@ -342,68 +400,7 @@
             this.columnHeader5.Text = "Thành Tiền";
             this.columnHeader5.Width = 146;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 218);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 17);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Tên khách hàng";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(114, 210);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(173, 25);
-            this.textBox5.TabIndex = 13;
-            // 
-            // listView2
-            // 
-            this.listView2.CheckBoxes = true;
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(645, 4);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(232, 621);
-            this.listView2.TabIndex = 8;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Tên món hàng";
-            this.columnHeader6.Width = 227;
-            // 
-            // label15
-            // 
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(114, 13);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(133, 25);
-            this.label15.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(163, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(31, 218);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Tìm hàng hóa";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -411,7 +408,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "HoaDon";
             this.Text = "Hóa đơn mới";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -430,22 +427,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_luu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_ten_item;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lbl_tienthua;
+        private System.Windows.Forms.TextBox tb_tiennhan;
+        private System.Windows.Forms.Label lbl_thanhtien;
+        private System.Windows.Forms.TextBox tb_dongia;
+        private System.Windows.Forms.TextBox tb_sl;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lv_item;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -453,14 +450,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.TextBox tb_tenkhach;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbx_chon_item;
     }
 }
 

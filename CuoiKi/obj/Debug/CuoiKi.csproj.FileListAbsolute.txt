@@ -16,7 +16,6 @@ C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\bin\Debug\CuoiKi.exe
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\bin\Debug\CuoiKi.pdb
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.csprojAssemblyReference.cache
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.DangNhap.resources
-C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.Form1.resources
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.GiaoDien.resources
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.Properties.Resources.resources
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.QuanLi.resources
@@ -24,3 +23,4 @@ C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.csproj.GenerateRe
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.exe
 C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.pdb
+C:\Users\ASUS\Documents\GitHub\cuoi_ki\CuoiKi\obj\Debug\CuoiKi.HoaDon.resources
