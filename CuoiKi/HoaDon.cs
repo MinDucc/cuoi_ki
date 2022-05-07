@@ -17,25 +17,16 @@ namespace CuoiKi
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void cbx_chon_item_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -49,6 +40,18 @@ namespace CuoiKi
         {
             ListViewItem lvi = new ListViewItem(lbl_ten_item.Text);
             lv_item.Items.Add(lvi);
+        }
+
+        private void HoaDon_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        public event EventHandler TroVe;
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            TroVe(this, new EventArgs());
+            this.Close();
         }
     }
 }

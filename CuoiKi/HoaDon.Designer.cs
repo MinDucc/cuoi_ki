@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_id = new System.Windows.Forms.Label();
@@ -112,6 +113,7 @@
             this.btn_back.TabIndex = 11;
             this.btn_back.Text = "Trở về";
             this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_luu
             // 
@@ -185,6 +187,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.lbl_id);
@@ -201,6 +204,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 278);
             this.panel2.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(214, 14);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(79, 24);
+            this.comboBox1.TabIndex = 13;
             // 
             // button2
             // 
@@ -225,7 +236,7 @@
             this.lbl_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_id.Location = new System.Drawing.Point(114, 13);
             this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(133, 25);
+            this.lbl_id.Size = new System.Drawing.Size(82, 25);
             this.lbl_id.TabIndex = 10;
             // 
             // tb_dongia
@@ -233,7 +244,7 @@
             this.tb_dongia.Location = new System.Drawing.Point(114, 175);
             this.tb_dongia.Multiline = true;
             this.tb_dongia.Name = "tb_dongia";
-            this.tb_dongia.Size = new System.Drawing.Size(133, 25);
+            this.tb_dongia.Size = new System.Drawing.Size(179, 25);
             this.tb_dongia.TabIndex = 9;
             // 
             // tb_sl
@@ -242,7 +253,7 @@
             this.tb_sl.Location = new System.Drawing.Point(114, 127);
             this.tb_sl.Multiline = true;
             this.tb_sl.Name = "tb_sl";
-            this.tb_sl.Size = new System.Drawing.Size(133, 25);
+            this.tb_sl.Size = new System.Drawing.Size(179, 25);
             this.tb_sl.TabIndex = 8;
             // 
             // label9
@@ -262,14 +273,13 @@
             this.label8.Size = new System.Drawing.Size(73, 17);
             this.label8.TabIndex = 6;
             this.label8.Text = "Số Lượng ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // lbl_ten_item
             // 
             this.lbl_ten_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_ten_item.Location = new System.Drawing.Point(114, 70);
             this.lbl_ten_item.Name = "lbl_ten_item";
-            this.lbl_ten_item.Size = new System.Drawing.Size(133, 25);
+            this.lbl_ten_item.Size = new System.Drawing.Size(179, 25);
             this.lbl_ten_item.TabIndex = 5;
             // 
             // label6
@@ -335,7 +345,7 @@
             "ca duoi"});
             this.cbx_chon_item.Location = new System.Drawing.Point(706, 3);
             this.cbx_chon_item.Name = "cbx_chon_item";
-            this.cbx_chon_item.Size = new System.Drawing.Size(168, 617);
+            this.cbx_chon_item.Size = new System.Drawing.Size(168, 569);
             this.cbx_chon_item.TabIndex = 8;
             this.cbx_chon_item.SelectedIndexChanged += new System.EventHandler(this.cbx_chon_item_SelectedIndexChanged);
             // 
@@ -410,6 +420,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "HoaDon";
             this.Text = "Hóa đơn mới";
+            this.Load += new System.EventHandler(this.HoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -457,6 +468,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbx_chon_item;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
