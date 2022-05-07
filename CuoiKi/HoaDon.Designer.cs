@@ -420,6 +420,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "HoaDon";
             this.Text = "Hóa đơn mới";
+            
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HoaDon_FormClosed);
             this.Load += new System.EventHandler(this.HoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

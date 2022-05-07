@@ -16,12 +16,18 @@ namespace CuoiKi
         {
             InitializeComponent();
         }
-
+        public bool isExit = true;
         public event EventHandler TroVe;
         private void btn_back_Click(object sender, EventArgs e)
         {
             TroVe(this, new EventArgs());
             this.Close();
+        }
+
+        private void Account_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isExit)
+                Application.Exit();
         }
     }
 }

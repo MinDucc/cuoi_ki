@@ -58,6 +58,8 @@ namespace CuoiKi
         private void Nhanvien_TroVe(object sender, EventArgs e)
         {
             this.Show();
+            (sender as NhanVien).isExit = false;
+            (sender as NhanVien).Close();
         }
 
         /// <summary>
@@ -76,6 +78,8 @@ namespace CuoiKi
         private void QLHoaDon_TroVe(object sender, EventArgs e)
         {
             this.Show();
+            (sender as QLHoaDon).isExit = false;
+            (sender as QLHoaDon).Close();
         }
 
         /// <summary>
@@ -94,7 +98,9 @@ namespace CuoiKi
         private void Hanghoa_TroVe(object sender, EventArgs e)
         {
             this.Show();
-            
+            (sender as HangHoa).isExit = false;
+            (sender as HangHoa).Close();
+
         }
 
         /// <summary>
@@ -114,6 +120,8 @@ namespace CuoiKi
         private void Taikhoan_TroVe(object sender, EventArgs e)
         {
             this.Show();
+            (sender as Account).isExit = false;
+            (sender as Account).Close();
         }
 
         /// <summary>
@@ -132,9 +140,10 @@ namespace CuoiKi
         private void Hoadon_TroVe(object sender, EventArgs e)
         {
             this.Show();
+            (sender as HoaDon).isExit = false;
+            (sender as HoaDon).Close();
             
         }
-
         
     }
 }

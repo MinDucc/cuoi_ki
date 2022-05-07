@@ -251,6 +251,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Account";
             this.Text = "Account";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Account_FormClosed);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

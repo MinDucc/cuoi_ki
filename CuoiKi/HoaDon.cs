@@ -48,10 +48,18 @@ namespace CuoiKi
         }
 
         public event EventHandler TroVe;
+        public bool isExit = true;
         private void btn_back_Click(object sender, EventArgs e)
         {
+            isExit = false;
             TroVe(this, new EventArgs());
             this.Close();
+        }
+
+        private void HoaDon_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isExit)
+                Application.Exit();
         }
     }
 }
