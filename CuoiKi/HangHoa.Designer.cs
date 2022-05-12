@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_hangton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btn_hsd = new System.Windows.Forms.Button();
+            this.tbx_hangton = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_sua = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
+            this.bt_them = new System.Windows.Forms.Button();
+            this.tbx_giaban = new System.Windows.Forms.TextBox();
+            this.tbx_giamua = new System.Windows.Forms.TextBox();
+            this.tbx_tenhang = new System.Windows.Forms.TextBox();
+            this.tbx_mahang = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,15 +58,15 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button6
+            // btn_hangton
             // 
-            this.button6.Location = new System.Drawing.Point(630, 82);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(156, 60);
-            this.button6.TabIndex = 59;
-            this.button6.Text = "Số lượng hàng tồn còn ít";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_hangton.Location = new System.Drawing.Point(630, 82);
+            this.btn_hangton.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_hangton.Name = "btn_hangton";
+            this.btn_hangton.Size = new System.Drawing.Size(156, 60);
+            this.btn_hangton.TabIndex = 59;
+            this.btn_hangton.Text = "Số lượng hàng tồn còn ít";
+            this.btn_hangton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -97,23 +97,23 @@
             this.label7.TabIndex = 57;
             this.label7.Text = "HSD:";
             // 
-            // button5
+            // btn_hsd
             // 
-            this.button5.Location = new System.Drawing.Point(453, 160);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 60);
-            this.button5.TabIndex = 56;
-            this.button5.Text = "Hàng hết HSD";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_hsd.Location = new System.Drawing.Point(453, 160);
+            this.btn_hsd.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_hsd.Name = "btn_hsd";
+            this.btn_hsd.Size = new System.Drawing.Size(156, 60);
+            this.btn_hsd.TabIndex = 56;
+            this.btn_hsd.Text = "Hàng hết HSD";
+            this.btn_hsd.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // tbx_hangton
             // 
-            this.textBox5.Location = new System.Drawing.Point(149, 156);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(279, 22);
-            this.textBox5.TabIndex = 55;
+            this.tbx_hangton.Location = new System.Drawing.Point(149, 156);
+            this.tbx_hangton.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_hangton.Name = "tbx_hangton";
+            this.tbx_hangton.Size = new System.Drawing.Size(279, 22);
+            this.tbx_hangton.TabIndex = 55;
             // 
             // label6
             // 
@@ -146,67 +146,67 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // button3
+            // btn_sua
             // 
-            this.button3.Location = new System.Drawing.Point(453, 82);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 60);
-            this.button3.TabIndex = 51;
-            this.button3.Text = "Sửa thông tin";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_sua.Location = new System.Drawing.Point(453, 82);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(156, 60);
+            this.btn_sua.TabIndex = 51;
+            this.btn_sua.Text = "Sửa thông tin";
+            this.btn_sua.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_xoa
             // 
-            this.button2.Location = new System.Drawing.Point(630, 15);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 53);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "Xóa mặt hàng";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_xoa.Location = new System.Drawing.Point(630, 15);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(156, 53);
+            this.btn_xoa.TabIndex = 50;
+            this.btn_xoa.Text = "Xóa mặt hàng";
+            this.btn_xoa.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // bt_them
             // 
-            this.button1.Location = new System.Drawing.Point(453, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 53);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Thêm mặt hàng ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_them.Location = new System.Drawing.Point(453, 15);
+            this.bt_them.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_them.Name = "bt_them";
+            this.bt_them.Size = new System.Drawing.Size(156, 53);
+            this.bt_them.TabIndex = 49;
+            this.bt_them.Text = "Thêm mặt hàng ";
+            this.bt_them.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tbx_giaban
             // 
-            this.textBox4.Location = new System.Drawing.Point(149, 123);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(279, 22);
-            this.textBox4.TabIndex = 48;
+            this.tbx_giaban.Location = new System.Drawing.Point(149, 123);
+            this.tbx_giaban.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_giaban.Name = "tbx_giaban";
+            this.tbx_giaban.Size = new System.Drawing.Size(279, 22);
+            this.tbx_giaban.TabIndex = 48;
             // 
-            // textBox3
+            // tbx_giamua
             // 
-            this.textBox3.Location = new System.Drawing.Point(149, 82);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(279, 22);
-            this.textBox3.TabIndex = 47;
+            this.tbx_giamua.Location = new System.Drawing.Point(149, 82);
+            this.tbx_giamua.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_giamua.Name = "tbx_giamua";
+            this.tbx_giamua.Size = new System.Drawing.Size(279, 22);
+            this.tbx_giamua.TabIndex = 47;
             // 
-            // textBox2
+            // tbx_tenhang
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 50);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 22);
-            this.textBox2.TabIndex = 46;
+            this.tbx_tenhang.Location = new System.Drawing.Point(149, 50);
+            this.tbx_tenhang.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_tenhang.Name = "tbx_tenhang";
+            this.tbx_tenhang.Size = new System.Drawing.Size(279, 22);
+            this.tbx_tenhang.TabIndex = 46;
             // 
-            // textBox1
+            // tbx_mahang
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 22);
-            this.textBox1.TabIndex = 45;
+            this.tbx_mahang.Location = new System.Drawing.Point(149, 6);
+            this.tbx_mahang.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_mahang.Name = "tbx_mahang";
+            this.tbx_mahang.Size = new System.Drawing.Size(279, 22);
+            this.tbx_mahang.TabIndex = 45;
             // 
             // label2
             // 
@@ -245,7 +245,7 @@
             this.panel1.Location = new System.Drawing.Point(19, 258);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 288);
+            this.panel1.Size = new System.Drawing.Size(837, 288);
             this.panel1.TabIndex = 40;
             // 
             // lv_hanghoa
@@ -253,8 +253,8 @@
             this.lv_hanghoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader5,
             this.columnHeader3,
+            this.columnHeader5,
             this.columnHeader4,
             this.columnHeader6});
             this.lv_hanghoa.GridLines = true;
@@ -262,7 +262,7 @@
             this.lv_hanghoa.Location = new System.Drawing.Point(4, 10);
             this.lv_hanghoa.Margin = new System.Windows.Forms.Padding(4);
             this.lv_hanghoa.Name = "lv_hanghoa";
-            this.lv_hanghoa.Size = new System.Drawing.Size(792, 271);
+            this.lv_hanghoa.Size = new System.Drawing.Size(827, 271);
             this.lv_hanghoa.TabIndex = 0;
             this.lv_hanghoa.UseCompatibleStateImageBehavior = false;
             this.lv_hanghoa.View = System.Windows.Forms.View.Details;
@@ -279,47 +279,45 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.DisplayIndex = 3;
             this.columnHeader5.Text = "Giá bán ra";
             this.columnHeader5.Width = 80;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.DisplayIndex = 2;
             this.columnHeader3.Text = "Số lượng tồn kho";
             this.columnHeader3.Width = 116;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Giá mua vào";
-            this.columnHeader4.Width = 80;
+            this.columnHeader4.Width = 102;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Hạn sử dụng";
-            this.columnHeader6.Width = 80;
+            this.columnHeader6.Width = 106;
             // 
             // HangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 566);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(869, 566);
+            this.Controls.Add(this.btn_hangton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.btn_hsd);
+            this.Controls.Add(this.tbx_hangton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_sua);
+            this.Controls.Add(this.btn_xoa);
+            this.Controls.Add(this.bt_them);
+            this.Controls.Add(this.tbx_giaban);
+            this.Controls.Add(this.tbx_giamua);
+            this.Controls.Add(this.tbx_tenhang);
+            this.Controls.Add(this.tbx_mahang);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -328,6 +326,7 @@
             this.Text = "HangHoa";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HangHoa_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HangHoa_FormClosed);
+            this.Load += new System.EventHandler(this.HangHoa_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -336,22 +335,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_hangton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button btn_hsd;
+        private System.Windows.Forms.TextBox tbx_hangton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_sua;
+        private System.Windows.Forms.Button btn_xoa;
+        private System.Windows.Forms.Button bt_them;
+        private System.Windows.Forms.TextBox tbx_giaban;
+        private System.Windows.Forms.TextBox tbx_giamua;
+        private System.Windows.Forms.TextBox tbx_tenhang;
+        private System.Windows.Forms.TextBox tbx_mahang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

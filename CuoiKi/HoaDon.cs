@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CuoiKi.Class;
 namespace CuoiKi
 {
     public partial class HoaDon : Form
@@ -15,15 +15,29 @@ namespace CuoiKi
         public HoaDon()
         {
             InitializeComponent();
+            DowListItem();
         }
 
-        ManagementDFContext db = new ManagementDFContext();       
-
+        ManagementDFContext db = new ManagementDFContext();
+        List<C_Item> ListItem = new List<C_Item>();
+        private void DowListItem()
+        {
+            ListItem = new List<C_Item>();
+            foreach (var item in db.Items)
+            {
+                C_Item it = new C_Item(item.item_id, item.item_name,
+                                       Convert.ToInt32(item.quantity_in_stock),
+                                        Convert.ToDouble(item.item_price_in),
+                                        Convert.ToDouble(item.item_price_out),
+                                        item.expiry.ToString());
+                ListItem.Add(it);
+            }
+        }
         private void HoaDon_Load(object sender, EventArgs e)
         {
-            var result = db.Items.Select(s => s.item_name);
+            var result = ListItem.Select(s => s.Name);
             cbx_chon_item.DataSource = result.ToList();
-            var item = db.Items.Select(s => s.item_id);
+            var item = ListItem.Select(s => s.Id);
             cbx_id.DataSource = item.ToList(); 
         }
        
@@ -32,7 +46,10 @@ namespace CuoiKi
         {
             if(cbx_chon_item.SelectedItem != null)
             {
-                var result = from c in db.Items where c.item_name == cbx_chon_item.SelectedItem.ToString() select new { Mã = c.item_id, Tên = c.item_name,Giá=c.item_price_out };
+                var result = from c in ListItem 
+                             where c.Name == cbx_chon_item.SelectedItem.ToString() 
+                             select new 
+                             { Mã = c.Id, Tên = c.Name,Giá=c.Price_out };
                 result.ToList();
                 lbl_id.Text = result.First().Mã.ToString();
                 lbl_ten_item.Text = result.First().Tên;

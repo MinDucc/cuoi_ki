@@ -62,6 +62,7 @@
     <Compile Include="Account.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Class\C_Item.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
@@ -224,9 +225,7 @@
   <ItemGroup>
     <None Include="Resources\account.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ManagementModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -17,10 +17,7 @@ namespace CuoiKi
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         ManagementDFContext db = new ManagementDFContext();
         private string position;
         public bool CheckAccount()
@@ -44,13 +41,13 @@ namespace CuoiKi
         {
             if (tb_account.Text == "" || tb_password.Text == "")
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu chưa nhập!");
+                MessageBox.Show("Tài khoản hoặc mật khẩu chưa nhập!","Thông báo!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
             
             if(CheckAccount()==false)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb_account.Focus();
                 return;
             }    

@@ -1,2 +1,3 @@
 update full window
 thêm chức năng cho hóa đơn
+thêm class,kết nối nhân viên,kết nối hàng hóa

@@ -33,7 +33,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_DN = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.tb_account = new System.Windows.Forms.TextBox();
@@ -72,7 +71,6 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btn_thoat);
             this.panel2.Controls.Add(this.btn_DN);
-            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.tb_password);
             this.panel2.Controls.Add(this.tb_account);
@@ -85,7 +83,7 @@
             // 
             // btn_thoat
             // 
-            this.btn_thoat.Location = new System.Drawing.Point(639, 246);
+            this.btn_thoat.Location = new System.Drawing.Point(639, 215);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(113, 31);
             this.btn_thoat.TabIndex = 7;
@@ -95,23 +93,13 @@
             // 
             // btn_DN
             // 
-            this.btn_DN.Location = new System.Drawing.Point(495, 246);
+            this.btn_DN.Location = new System.Drawing.Point(495, 215);
             this.btn_DN.Name = "btn_DN";
             this.btn_DN.Size = new System.Drawing.Size(121, 31);
             this.btn_DN.TabIndex = 6;
             this.btn_DN.Text = "Đăng Nhập";
             this.btn_DN.UseVisualStyleBackColor = true;
             this.btn_DN.Click += new System.EventHandler(this.btn_DN_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(495, 185);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(121, 21);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Hiện mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -127,11 +115,14 @@
             // 
             // tb_password
             // 
+            this.tb_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_password.Location = new System.Drawing.Point(495, 124);
             this.tb_password.Multiline = true;
             this.tb_password.Name = "tb_password";
+            this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(257, 29);
             this.tb_password.TabIndex = 3;
+            this.tb_password.Text = "1";
             // 
             // tb_account
             // 
@@ -140,18 +131,20 @@
             this.tb_account.Name = "tb_account";
             this.tb_account.Size = new System.Drawing.Size(257, 29);
             this.tb_account.TabIndex = 2;
+            this.tb_account.Text = "tmd";
             // 
             // label2
             // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(375, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật Khẩu";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(365, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
@@ -162,9 +155,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 469);
+            this.ClientSize = new System.Drawing.Size(780, 426);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DangNhap";
             this.Text = "Đăng  Nhập";
             this.panel1.ResumeLayout(false);
@@ -186,7 +180,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.Button btn_DN;
     }
