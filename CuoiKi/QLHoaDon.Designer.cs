@@ -237,6 +237,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "QLHoaDon";
             this.Text = "QLHoaDon";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QLHoaDon_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QLHoaDon_FormClosed);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

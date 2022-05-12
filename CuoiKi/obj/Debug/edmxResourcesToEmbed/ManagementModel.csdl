@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManagementDFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Account1" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__employ__2E1BDC42" FromRole="Accounts" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="employee_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="birth" Type="DateTime" Precision="0" />
+    <Property Name="shift" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="salary" Type="Double" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Employee__employ__2E1BDC42" FromRole="Employee" ToRole="Accounts" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__employee__300424B4" FromRole="Employee" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="item_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="item_price_in" Type="Double" />
+    <Property Name="item_price_out" Type="Double" />
+    <Property Name="quantity_in_stock" Type="Int32" />
+    <Property Name="expiry" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Item__product_id__2F10007B" FromRole="Item" ToRole="Product" />
+    <NavigationProperty Name="Lineitems" Relationship="Self.FK__Lineitem__item_i__31EC6D26" FromRole="Item" ToRole="Lineitem" />
+  </EntityType>
+  <EntityType Name="Lineitem">
+    <Key>
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="Self.FK__Lineitem__item_i__31EC6D26" FromRole="Lineitem" ToRole="Item" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Lineitem__order___30F848ED" FromRole="Lineitem" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_date" Type="DateTime" Precision="3" />
+    <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="total" Type="Double" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Orders__employee__300424B4" FromRole="Orders" ToRole="Employee" />
+    <NavigationProperty Name="Lineitems" Relationship="Self.FK__Lineitem__order___30F848ED" FromRole="Orders" ToRole="Lineitem" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Items" Relationship="Self.FK__Item__product_id__2F10007B" FromRole="Product" ToRole="Item" />
+  </EntityType>
+  <Association Name="FK__Employee__employ__2E1BDC42">
+    <End Role="Accounts" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts">
+        <PropertyRef Name="Account1" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="employee_account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__employee__300424B4">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Item__product_id__2F10007B">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lineitem__item_i__31EC6D26">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="Lineitem" Type="Self.Lineitem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="item_id" />
+      </Principal>
+      <Dependent Role="Lineitem">
+        <PropertyRef Name="item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lineitem__order___30F848ED">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="Lineitem" Type="Self.Lineitem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="Lineitem">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ManagementDFContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="Lineitems" EntityType="Self.Lineitem" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK__Employee__employ__2E1BDC42" Association="Self.FK__Employee__employ__2E1BDC42">
+      <End Role="Accounts" EntitySet="Accounts" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__employee__300424B4" Association="Self.FK__Orders__employee__300424B4">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Item__product_id__2F10007B" Association="Self.FK__Item__product_id__2F10007B">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lineitem__item_i__31EC6D26" Association="Self.FK__Lineitem__item_i__31EC6D26">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="Lineitem" EntitySet="Lineitems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lineitem__order___30F848ED" Association="Self.FK__Lineitem__order___30F848ED">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Lineitem" EntitySet="Lineitems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

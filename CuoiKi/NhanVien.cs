@@ -24,10 +24,26 @@ namespace CuoiKi
             this.Close();
         }
 
+        public delegate void Exit(bool exit);
+        public Exit exit;
         private void NhanVien_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (isExit)
+            {
+                exit(true);
                 Application.Exit();
+            }
+        }
+
+        private void NhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isExit)
+            {
+                if (MessageBox.Show("Bạn có muốn đóng form", "Thông báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

@@ -326,6 +326,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "HangHoa";
             this.Text = "HangHoa";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HangHoa_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HangHoa_FormClosed);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

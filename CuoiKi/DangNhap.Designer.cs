@@ -31,14 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_thoat = new System.Windows.Forms.Button();
+            this.btn_DN = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_password = new System.Windows.Forms.TextBox();
+            this.tb_account = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_DN = new System.Windows.Forms.Button();
-            this.btn_thoat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,14 +74,34 @@
             this.panel2.Controls.Add(this.btn_DN);
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tb_password);
+            this.panel2.Controls.Add(this.tb_account);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(4, 155);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(791, 309);
             this.panel2.TabIndex = 1;
+            // 
+            // btn_thoat
+            // 
+            this.btn_thoat.Location = new System.Drawing.Point(639, 246);
+            this.btn_thoat.Name = "btn_thoat";
+            this.btn_thoat.Size = new System.Drawing.Size(113, 31);
+            this.btn_thoat.TabIndex = 7;
+            this.btn_thoat.Text = "Thoát";
+            this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
+            // 
+            // btn_DN
+            // 
+            this.btn_DN.Location = new System.Drawing.Point(495, 246);
+            this.btn_DN.Name = "btn_DN";
+            this.btn_DN.Size = new System.Drawing.Size(121, 31);
+            this.btn_DN.TabIndex = 6;
+            this.btn_DN.Text = "Đăng Nhập";
+            this.btn_DN.UseVisualStyleBackColor = true;
+            this.btn_DN.Click += new System.EventHandler(this.btn_DN_Click);
             // 
             // checkBox1
             // 
@@ -105,21 +125,21 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // tb_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(495, 124);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 29);
-            this.textBox2.TabIndex = 3;
+            this.tb_password.Location = new System.Drawing.Point(495, 124);
+            this.tb_password.Multiline = true;
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Size = new System.Drawing.Size(257, 29);
+            this.tb_password.TabIndex = 3;
             // 
-            // textBox1
+            // tb_account
             // 
-            this.textBox1.Location = new System.Drawing.Point(495, 52);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 29);
-            this.textBox1.TabIndex = 2;
+            this.tb_account.Location = new System.Drawing.Point(495, 52);
+            this.tb_account.Multiline = true;
+            this.tb_account.Name = "tb_account";
+            this.tb_account.Size = new System.Drawing.Size(257, 29);
+            this.tb_account.TabIndex = 2;
             // 
             // label2
             // 
@@ -137,26 +157,6 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Người Dùng";
-            // 
-            // btn_DN
-            // 
-            this.btn_DN.Location = new System.Drawing.Point(495, 246);
-            this.btn_DN.Name = "btn_DN";
-            this.btn_DN.Size = new System.Drawing.Size(121, 31);
-            this.btn_DN.TabIndex = 6;
-            this.btn_DN.Text = "Đăng Nhập";
-            this.btn_DN.UseVisualStyleBackColor = true;
-            this.btn_DN.Click += new System.EventHandler(this.btn_DN_Click);
-            // 
-            // btn_thoat
-            // 
-            this.btn_thoat.Location = new System.Drawing.Point(639, 246);
-            this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(113, 31);
-            this.btn_thoat.TabIndex = 7;
-            this.btn_thoat.Text = "Thoát";
-            this.btn_thoat.UseVisualStyleBackColor = true;
-            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // DangNhap
             // 
@@ -180,8 +180,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_password;
+        private System.Windows.Forms.TextBox tb_account;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btn_TaiKhoan);
@@ -68,6 +70,15 @@
             this.panel1.Size = new System.Drawing.Size(767, 283);
             this.panel1.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(544, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Thống Kê";
+            // 
             // button7
             // 
             this.button7.BackgroundImage = global::CuoiKi.Properties.Resources.account;
@@ -81,7 +92,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(662, 118);
+            this.label6.Location = new System.Drawing.Point(668, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 11;
@@ -229,6 +240,7 @@
             this.Text = "Giao Diện";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GiaoDien_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GiaoDien_FormClosed);
+            this.Load += new System.EventHandler(this.GiaoDien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -255,5 +267,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_TaiKhoan;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label7;
     }
 }

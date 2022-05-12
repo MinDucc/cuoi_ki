@@ -12,18 +12,30 @@ namespace CuoiKi
 {
     public partial class GiaoDien : Form
     {
-        public GiaoDien()
+        public string position;
+        public GiaoDien(string position)
         {
             InitializeComponent();
+            this.position = position;
         }
+        
         public bool isExit=true;
         public event EventHandler DangXuat;
+        private void formChild_Close(bool isClose)
+        {
+            isExit = false;
+        }    
         private void btn_dx_Click(object sender, EventArgs e)
         {
             isExit = false;
             DangXuat(this, new EventArgs());
             this.Close();
 
+        }
+        private void GiaoDien_Load(object sender, EventArgs e)
+        {
+            if (position == "Employee")
+                btn_TaiKhoan.Enabled = false;
         }
         /// <summary>
         /// Đóng Form 
@@ -35,11 +47,16 @@ namespace CuoiKi
             if (isExit)
                 Application.Exit();
         }
+        
         private void GiaoDien_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        {      
+            
             if (isExit)
                 if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
-                    e.Cancel = true;
+                {
+                    e.Cancel = true;                   
+                }    
+
         }
         /// <summary>
         /// Su kien nut nhan Vien
@@ -49,6 +66,7 @@ namespace CuoiKi
         private void btn_nhanvien_Click(object sender, EventArgs e)
         {
             NhanVien nhanvien = new NhanVien();
+            nhanvien.exit = new NhanVien.Exit(formChild_Close);
             nhanvien.Show();
             this.Hide();
             nhanvien.TroVe += Nhanvien_TroVe;
@@ -70,6 +88,7 @@ namespace CuoiKi
         private void btn_QLHoaDon_Click(object sender, EventArgs e)
         {
             QLHoaDon qLHoaDon = new QLHoaDon();
+            qLHoaDon.exit = new QLHoaDon.Exit(formChild_Close);
             qLHoaDon.Show();
             this.Hide();
             qLHoaDon.TroVe += QLHoaDon_TroVe;
@@ -90,6 +109,7 @@ namespace CuoiKi
         private void btn_HangHoa_Click(object sender, EventArgs e)
         {
             HangHoa hanghoa = new HangHoa();
+            hanghoa.exit = new HangHoa.Exit(formChild_Close);
             hanghoa.Show();
             this.Hide();
             hanghoa.TroVe += Hanghoa_TroVe;
@@ -104,13 +124,14 @@ namespace CuoiKi
         }
 
         /// <summary>
-        /// Su kie nut Account
+        /// Su kie nut TaiKhoan
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_TaiKhoan_Click(object sender, EventArgs e)
         {
-            Account taikhoan = new Account();
+            TaiKhoan taikhoan = new TaiKhoan();
+            taikhoan.exit = new TaiKhoan.Exit(formChild_Close);
             taikhoan.Show();
             this.Hide();
             taikhoan.TroVe += Taikhoan_TroVe;
@@ -120,8 +141,8 @@ namespace CuoiKi
         private void Taikhoan_TroVe(object sender, EventArgs e)
         {
             this.Show();
-            (sender as Account).isExit = false;
-            (sender as Account).Close();
+            (sender as TaiKhoan).isExit = false;
+            (sender as TaiKhoan).Close();
         }
 
         /// <summary>
@@ -132,6 +153,7 @@ namespace CuoiKi
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
             HoaDon hoadon = new HoaDon();
+            hoadon.exit = new HoaDon.Exit(formChild_Close);
             hoadon.Show();
             this.Hide();
             hoadon.TroVe += Hoadon_TroVe;
@@ -141,9 +163,10 @@ namespace CuoiKi
         {
             this.Show();
             (sender as HoaDon).isExit = false;
-            (sender as HoaDon).Close();
+            (sender as HoaDon).Close();  
             
         }
+
         
     }
 }
