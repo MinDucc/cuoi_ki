@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_position = new System.Windows.Forms.Label();
+            this.lbl_position = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +54,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lb_position);
+            this.panel1.Controls.Add(this.lbl_position);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label6);
@@ -69,6 +75,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(767, 283);
             this.panel1.TabIndex = 0;
+            // 
+            // lb_position
+            // 
+            this.lb_position.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_position.Location = new System.Drawing.Point(628, 244);
+            this.lb_position.Name = "lb_position";
+            this.lb_position.Size = new System.Drawing.Size(133, 30);
+            this.lb_position.TabIndex = 16;
+            // 
+            // lbl_position
+            // 
+            this.lbl_position.AutoSize = true;
+            this.lbl_position.Location = new System.Drawing.Point(602, 262);
+            this.lbl_position.Name = "lbl_position";
+            this.lbl_position.Size = new System.Drawing.Size(0, 17);
+            this.lbl_position.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(299, 246);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(281, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Bạn đang đăng nhập với vai trò :";
             // 
             // label7
             // 
@@ -268,5 +300,8 @@
         private System.Windows.Forms.Button btn_TaiKhoan;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_position;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lb_position;
     }
 }

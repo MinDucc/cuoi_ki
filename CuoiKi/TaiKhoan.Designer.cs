@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_cv = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbx_mk = new System.Windows.Forms.TextBox();
+            this.tbx_tk = new System.Windows.Forms.TextBox();
+            this.tbx_ten = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgv_account = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_account)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbx_cv
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(174, 144);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 24);
-            this.comboBox1.TabIndex = 62;
+            this.cbx_cv.FormattingEnabled = true;
+            this.cbx_cv.Items.AddRange(new object[] {
+            "Admin",
+            "Employee"});
+            this.cbx_cv.Location = new System.Drawing.Point(174, 144);
+            this.cbx_cv.Margin = new System.Windows.Forms.Padding(4);
+            this.cbx_cv.Name = "cbx_cv";
+            this.cbx_cv.Size = new System.Drawing.Size(279, 24);
+            this.cbx_cv.TabIndex = 62;
             // 
             // label5
             // 
@@ -71,10 +71,10 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(597, 108);
+            this.btn_back.Location = new System.Drawing.Point(461, 183);
             this.btn_back.Margin = new System.Windows.Forms.Padding(4);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(112, 60);
+            this.btn_back.Size = new System.Drawing.Size(119, 46);
             this.btn_back.TabIndex = 60;
             this.btn_back.Text = "Trở về";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -82,60 +82,60 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(488, 108);
+            this.button3.Location = new System.Drawing.Point(461, 127);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 60);
+            this.button3.Size = new System.Drawing.Size(119, 56);
             this.button3.TabIndex = 59;
             this.button3.Text = "Sửa Tài Khoản";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(597, 23);
+            this.button2.Location = new System.Drawing.Point(461, 69);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 53);
+            this.button2.Size = new System.Drawing.Size(119, 53);
             this.button2.TabIndex = 58;
             this.button2.Text = "Xóa Tài Khoản";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(488, 24);
+            this.button1.Location = new System.Drawing.Point(461, 13);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 53);
+            this.button1.Size = new System.Drawing.Size(119, 56);
             this.button1.TabIndex = 57;
             this.button1.Text = "Thêm Tài Khoản";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // tbx_mk
             // 
-            this.textBox3.Location = new System.Drawing.Point(174, 93);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(279, 29);
-            this.textBox3.TabIndex = 56;
+            this.tbx_mk.Location = new System.Drawing.Point(174, 93);
+            this.tbx_mk.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_mk.Multiline = true;
+            this.tbx_mk.Name = "tbx_mk";
+            this.tbx_mk.Size = new System.Drawing.Size(279, 29);
+            this.tbx_mk.TabIndex = 56;
             // 
-            // textBox2
+            // tbx_tk
             // 
-            this.textBox2.Location = new System.Drawing.Point(174, 55);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 29);
-            this.textBox2.TabIndex = 55;
+            this.tbx_tk.Location = new System.Drawing.Point(174, 55);
+            this.tbx_tk.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_tk.Multiline = true;
+            this.tbx_tk.Name = "tbx_tk";
+            this.tbx_tk.Size = new System.Drawing.Size(279, 29);
+            this.tbx_tk.TabIndex = 55;
             // 
-            // textBox1
+            // tbx_ten
             // 
-            this.textBox1.Location = new System.Drawing.Point(174, 18);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 29);
-            this.textBox1.TabIndex = 54;
+            this.tbx_ten.Location = new System.Drawing.Point(174, 18);
+            this.tbx_ten.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_ten.Multiline = true;
+            this.tbx_ten.Name = "tbx_ten";
+            this.tbx_ten.Size = new System.Drawing.Size(279, 29);
+            this.tbx_ten.TabIndex = 54;
             // 
             // label2
             // 
@@ -181,69 +181,39 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Controls.Add(this.dgv_account);
             this.panel1.Location = new System.Drawing.Point(30, 229);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 309);
+            this.panel1.Size = new System.Drawing.Size(601, 309);
             this.panel1.TabIndex = 49;
             // 
-            // listView1
+            // dgv_account
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader5,
-            this.columnHeader3});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(4, 13);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(669, 290);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Họ và tên";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Account";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 140;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.DisplayIndex = 3;
-            this.columnHeader5.Text = "Chức vụ";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 121;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.DisplayIndex = 2;
-            this.columnHeader3.Text = "Password";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 116;
+            this.dgv_account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_account.Location = new System.Drawing.Point(3, 4);
+            this.dgv_account.Name = "dgv_account";
+            this.dgv_account.RowHeadersWidth = 51;
+            this.dgv_account.RowTemplate.Height = 24;
+            this.dgv_account.Size = new System.Drawing.Size(593, 308);
+            this.dgv_account.TabIndex = 0;
+          
+            this.dgv_account.SelectionChanged += new System.EventHandler(this.dgv_account_SelectionChanged);
             // 
             // TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 554);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(676, 551);
+            this.Controls.Add(this.cbx_cv);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbx_mk);
+            this.Controls.Add(this.tbx_tk);
+            this.Controls.Add(this.tbx_ten);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -253,7 +223,9 @@
             this.Text = "TaiKhoan";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TaiKhoan_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Account_FormClosed);
+            this.Load += new System.EventHandler(this.TaiKhoan_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_account)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,24 +233,20 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_cv;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbx_mk;
+        private System.Windows.Forms.TextBox tbx_tk;
+        private System.Windows.Forms.TextBox tbx_ten;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.DataGridView dgv_account;
     }
 }

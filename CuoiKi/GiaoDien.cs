@@ -37,11 +37,11 @@ namespace CuoiKi
         }
         private void GiaoDien_Load(object sender, EventArgs e)
         {
-            if (position == "Employee")
-            {
-                btn_TaiKhoan.Enabled = false;
+            if (position == "Employee")           
+                btn_TaiKhoan.Enabled = false;           
+            else
                 btn_HoaDon.Enabled = false;
-            }    
+            lb_position.Text = position;
         }
         /// <summary>
         /// Đóng Form 

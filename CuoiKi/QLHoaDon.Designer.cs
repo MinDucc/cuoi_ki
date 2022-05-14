@@ -40,14 +40,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgv_Order = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_back
@@ -162,67 +157,29 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Controls.Add(this.dgv_Order);
             this.panel1.Location = new System.Drawing.Point(19, 181);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(811, 247);
+            this.panel1.Size = new System.Drawing.Size(885, 247);
             this.panel1.TabIndex = 34;
             // 
-            // listView1
+            // dgv_Order
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(4, 14);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(793, 227);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã hóa đơn";
-            this.columnHeader1.Width = 80;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên khách hàng";
-            this.columnHeader2.Width = 108;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Tên sản phẩm";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Số lượng";
-            this.columnHeader4.Width = 85;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Đơn giá";
-            this.columnHeader5.Width = 79;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Ngày mua";
-            this.columnHeader6.Width = 120;
+            this.dgv_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Order.Location = new System.Drawing.Point(7, 12);
+            this.dgv_Order.Name = "dgv_Order";
+            this.dgv_Order.RowHeadersWidth = 51;
+            this.dgv_Order.RowTemplate.Height = 24;
+            this.dgv_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Order.Size = new System.Drawing.Size(862, 230);
+            this.dgv_Order.TabIndex = 1;
             // 
             // QLHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 443);
+            this.ClientSize = new System.Drawing.Size(903, 443);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox2);
@@ -239,7 +196,9 @@
             this.Text = "QLHoaDon";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QLHoaDon_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QLHoaDon_FormClosed);
+            this.Load += new System.EventHandler(this.QLHoaDon_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,12 +218,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.DataGridView dgv_Order;
     }
 }

@@ -23,7 +23,7 @@ namespace CuoiKi
             TroVe(this, new EventArgs());
             this.Close();
         }
-
+        ManagementDFContext db = new ManagementDFContext();
         public delegate void Exit(bool exit);
         public Exit exit;
         private void QLHoaDon_FormClosed(object sender, FormClosedEventArgs e)
@@ -44,6 +44,19 @@ namespace CuoiKi
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void QLHoaDon_Load(object sender, EventArgs e)
+        {
+            
+            var result = from o in db.Orders 
+                         select new { Mã=o.order_id
+                                    , Tên_Khách_Hàng=o.customer_name
+                                    ,Tên_nhân_viên=o.Employee.employee_name
+                                    ,Mã_nhân_viên=o.employee_id
+                                    ,Tổng_tiền=o.total
+                                    ,Ngày_mua=o.order_date};
+            dgv_Order.DataSource = result.ToList();
         }
     }
 }
