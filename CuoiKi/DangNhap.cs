@@ -20,6 +20,8 @@ namespace CuoiKi
        
         ManagementDFContext db = new ManagementDFContext();
         private string position;
+        private int id;
+
         public bool CheckAccount()
         {
             var listAcc = from acc in db.Accounts 
@@ -31,7 +33,16 @@ namespace CuoiKi
                 if (listAcc.First().Password == tb_password.Text)
                 {
                     position = listAcc.First().Position;
+                    var emloyee_id = from nv in db.Employees
+                                     where nv.employee_account == tb_account.Text
+                                     select nv;
+                    emloyee_id.ToList();
+                    if (position== "Employee")
+                        id = emloyee_id.First().employee_id;
+                    else
+                        id = 0;
                     return true;
+                    
                 }    
             }    
             return false;
@@ -51,7 +62,7 @@ namespace CuoiKi
                 tb_account.Focus();
                 return;
             }    
-            GiaoDien giaoDien = new GiaoDien(position);
+            GiaoDien giaoDien = new GiaoDien(position,id);
             giaoDien.Show();
             this.Hide();
             giaoDien.DangXuat += GiaoDien_DangXuat;

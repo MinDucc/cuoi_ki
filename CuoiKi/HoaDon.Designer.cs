@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_thanhtoan = new System.Windows.Forms.Button();
             this.tb_tenkhach = new System.Windows.Forms.TextBox();
+            this.lbl_TongCong = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_luu = new System.Windows.Forms.Button();
             this.lbl_tienthua = new System.Windows.Forms.Label();
             this.tb_tiennhan = new System.Windows.Forms.TextBox();
-            this.lbl_thanhtien = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_xoa = new System.Windows.Forms.Button();
             this.cbx_id = new System.Windows.Forms.ComboBox();
             this.lbl_id = new System.Windows.Forms.Label();
             this.tb_dongia = new System.Windows.Forms.TextBox();
@@ -52,17 +54,15 @@
             this.btn_them = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.cbx_chon_item = new System.Windows.Forms.ComboBox();
-            this.lbl_TongCong = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.lv_item = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btn_new_hoadon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -71,13 +71,15 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_new_hoadon);
+            this.panel1.Controls.Add(this.btn_thanhtoan);
             this.panel1.Controls.Add(this.tb_tenkhach);
+            this.panel1.Controls.Add(this.lbl_TongCong);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.btn_back);
             this.panel1.Controls.Add(this.btn_luu);
             this.panel1.Controls.Add(this.lbl_tienthua);
             this.panel1.Controls.Add(this.tb_tiennhan);
-            this.panel1.Controls.Add(this.lbl_thanhtien);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -87,6 +89,16 @@
             this.panel1.Size = new System.Drawing.Size(329, 338);
             this.panel1.TabIndex = 0;
             // 
+            // btn_thanhtoan
+            // 
+            this.btn_thanhtoan.Location = new System.Drawing.Point(11, 258);
+            this.btn_thanhtoan.Name = "btn_thanhtoan";
+            this.btn_thanhtoan.Size = new System.Drawing.Size(124, 32);
+            this.btn_thanhtoan.TabIndex = 14;
+            this.btn_thanhtoan.Text = "Thanh toán";
+            this.btn_thanhtoan.UseVisualStyleBackColor = true;
+            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
+            // 
             // tb_tenkhach
             // 
             this.tb_tenkhach.Location = new System.Drawing.Point(114, 210);
@@ -94,6 +106,14 @@
             this.tb_tenkhach.Name = "tb_tenkhach";
             this.tb_tenkhach.Size = new System.Drawing.Size(173, 25);
             this.tb_tenkhach.TabIndex = 13;
+            // 
+            // lbl_TongCong
+            // 
+            this.lbl_TongCong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_TongCong.Location = new System.Drawing.Point(111, 53);
+            this.lbl_TongCong.Name = "lbl_TongCong";
+            this.lbl_TongCong.Size = new System.Drawing.Size(176, 25);
+            this.lbl_TongCong.TabIndex = 7;
             // 
             // label14
             // 
@@ -106,9 +126,9 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(163, 279);
+            this.btn_back.Location = new System.Drawing.Point(172, 296);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(130, 27);
+            this.btn_back.Size = new System.Drawing.Size(130, 32);
             this.btn_back.TabIndex = 11;
             this.btn_back.Text = "Trở về";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -116,12 +136,13 @@
             // 
             // btn_luu
             // 
-            this.btn_luu.Location = new System.Drawing.Point(3, 276);
+            this.btn_luu.Location = new System.Drawing.Point(11, 296);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(124, 32);
             this.btn_luu.TabIndex = 6;
             this.btn_luu.Text = "Lưu Hóa Đơn";
             this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // lbl_tienthua
             // 
@@ -138,14 +159,6 @@
             this.tb_tiennhan.Name = "tb_tiennhan";
             this.tb_tiennhan.Size = new System.Drawing.Size(176, 25);
             this.tb_tiennhan.TabIndex = 9;
-            // 
-            // lbl_thanhtien
-            // 
-            this.lbl_thanhtien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_thanhtien.Location = new System.Drawing.Point(114, 53);
-            this.lbl_thanhtien.Name = "lbl_thanhtien";
-            this.lbl_thanhtien.Size = new System.Drawing.Size(179, 25);
-            this.lbl_thanhtien.TabIndex = 6;
             // 
             // label4
             // 
@@ -170,9 +183,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Thành Tiền";
+            this.label2.Text = "Tổng Cộng";
             // 
             // label1
             // 
@@ -201,6 +214,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 278);
             this.panel2.TabIndex = 7;
+            // 
+            // btn_xoa
+            // 
+            this.btn_xoa.Location = new System.Drawing.Point(172, 235);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(139, 25);
+            this.btn_xoa.TabIndex = 14;
+            this.btn_xoa.Text = "Xóa khỏi hóa đơn";
+            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // cbx_id
             // 
@@ -297,13 +320,21 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.cbx_chon_item);
-            this.panel4.Controls.Add(this.lbl_TongCong);
-            this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.lv_item);
             this.panel4.Location = new System.Drawing.Point(10, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(879, 626);
             this.panel4.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Location = new System.Drawing.Point(706, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(168, 22);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Tìm sản phẩm";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbx_chon_item
             // 
@@ -316,23 +347,6 @@
             this.cbx_chon_item.Size = new System.Drawing.Size(168, 265);
             this.cbx_chon_item.TabIndex = 8;
             this.cbx_chon_item.SelectedIndexChanged += new System.EventHandler(this.cbx_chon_item_SelectedIndexChanged);
-            // 
-            // lbl_TongCong
-            // 
-            this.lbl_TongCong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_TongCong.Location = new System.Drawing.Point(564, 575);
-            this.lbl_TongCong.Name = "lbl_TongCong";
-            this.lbl_TongCong.Size = new System.Drawing.Size(136, 25);
-            this.lbl_TongCong.TabIndex = 7;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(467, 583);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 17);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Tổng cộng";
             // 
             // lv_item
             // 
@@ -348,7 +362,7 @@
             this.lv_item.HideSelection = false;
             this.lv_item.Location = new System.Drawing.Point(3, 3);
             this.lv_item.Name = "lv_item";
-            this.lv_item.Size = new System.Drawing.Size(697, 573);
+            this.lv_item.Size = new System.Drawing.Size(697, 613);
             this.lv_item.TabIndex = 2;
             this.lv_item.UseCompatibleStateImageBehavior = false;
             this.lv_item.View = System.Windows.Forms.View.Details;
@@ -378,25 +392,15 @@
             this.columnHeader5.Text = "Thành Tiền";
             this.columnHeader5.Width = 146;
             // 
-            // btn_xoa
+            // btn_new_hoadon
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(172, 235);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(139, 25);
-            this.btn_xoa.TabIndex = 14;
-            this.btn_xoa.Text = "Xóa khỏi hóa đơn";
-            this.btn_xoa.UseVisualStyleBackColor = true;
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
-            // 
-            // label7
-            // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(706, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 22);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Tìm sản phẩm";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_new_hoadon.Location = new System.Drawing.Point(172, 258);
+            this.btn_new_hoadon.Name = "btn_new_hoadon";
+            this.btn_new_hoadon.Size = new System.Drawing.Size(130, 31);
+            this.btn_new_hoadon.TabIndex = 15;
+            this.btn_new_hoadon.Text = "Hóa đơn mới";
+            this.btn_new_hoadon.UseVisualStyleBackColor = true;
+            this.btn_new_hoadon.Click += new System.EventHandler(this.btn_new_hoadon_Click);
             // 
             // HoaDon
             // 
@@ -416,7 +420,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -437,7 +440,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_tienthua;
         private System.Windows.Forms.TextBox tb_tiennhan;
-        private System.Windows.Forms.Label lbl_thanhtien;
         private System.Windows.Forms.TextBox tb_dongia;
         private System.Windows.Forms.TextBox tb_sl;
         private System.Windows.Forms.Label label9;
@@ -449,7 +451,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label lbl_TongCong;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.TextBox tb_tenkhach;
         private System.Windows.Forms.Label label14;
@@ -458,6 +459,8 @@
         private System.Windows.Forms.ComboBox cbx_id;
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_thanhtoan;
+        private System.Windows.Forms.Button btn_new_hoadon;
     }
 }
 

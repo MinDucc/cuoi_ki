@@ -13,10 +13,13 @@ namespace CuoiKi
     public partial class GiaoDien : Form
     {
         public string position;
-        public GiaoDien(string position)
+        public string name;
+        public int id;
+        public GiaoDien(string position,int id)
         {
             InitializeComponent();
             this.position = position;
+            this.id = id;
         }
         
         public bool isExit=true;
@@ -35,7 +38,10 @@ namespace CuoiKi
         private void GiaoDien_Load(object sender, EventArgs e)
         {
             if (position == "Employee")
+            {
                 btn_TaiKhoan.Enabled = false;
+                btn_HoaDon.Enabled = false;
+            }    
         }
         /// <summary>
         /// Đóng Form 
@@ -152,7 +158,7 @@ namespace CuoiKi
         /// <param name="e"></param>
         private void btn_HoaDon_Click(object sender, EventArgs e)
         {
-            HoaDon hoadon = new HoaDon();
+            HoaDon hoadon = new HoaDon(id);
             hoadon.exit = new HoaDon.Exit(formChild_Close);
             hoadon.Show();
             this.Hide();

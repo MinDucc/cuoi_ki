@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CuoiKi.Class;
+
 namespace CuoiKi
 {
     public partial class HoaDon : Form
     {
-        public HoaDon()
+        private int employee_id;
+        public HoaDon(int id)
         {
             InitializeComponent();
             DowListItem();
+            this.employee_id = id;
         }
 
         ManagementDFContext db = new ManagementDFContext();
@@ -38,7 +41,9 @@ namespace CuoiKi
             var result = ListItem.Select(s => s.Name);
             cbx_chon_item.DataSource = result.ToList();
             var item = ListItem.Select(s => s.Id);
-            cbx_id.DataSource = item.ToList(); 
+            cbx_id.DataSource = item.ToList();
+
+           
         }
        
 
@@ -139,7 +144,129 @@ namespace CuoiKi
 
         private void cbx_id_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbx_chon_item.SelectedItem != null)
+            {
+                var result = from c in ListItem
+                             where c.Id.ToString() == cbx_id.SelectedItem.ToString()
+                             select new
+                             { Mã = c.Id, Tên = c.Name, Giá = c.Price_out };
+                result.ToList();
+                lbl_id.Text = result.First().Mã.ToString();
+                lbl_ten_item.Text = result.First().Tên;
+                tb_sl.Text = "1";
+                tb_dongia.Text = result.First().Giá.ToString();
+            }
+        }
+        private void Update_Quantity()
+        {
+            foreach (ListViewItem item in lv_item.Items)
+            {
+                int id = Convert.ToInt32(item.SubItems[0].Text);
+                int sl = Convert.ToInt32(item.SubItems[2].Text);
+                var result = from it in db.Items
+                             where it.item_id == id
+                             select it;
+                if (result != null)
+                {
+                    result.FirstOrDefault().quantity_in_stock -= sl;
+                    
+                }
+            }
+        }
+        private void Add_Order()
+        {
 
+            Order order = new Order() { order_date = DateTime.Now
+                                        ,customer_name=tb_tenkhach.Text
+                                        ,employee_id=employee_id
+                                        ,total=TongTien };
+            
+            
+            db.Orders.Add(order);
+            db.SaveChanges();
+        }
+        private void Add_LineItem()
+        {
+            var id = db.Orders.Select(c => c.order_id);
+            foreach (ListViewItem item in lv_item.Items)
+            {
+                int item_id = Convert.ToInt32(item.SubItems[0].Text);
+                int sl = Convert.ToInt32(item.SubItems[2].Text);
+                db.Lineitems.Add(new Lineitem() {order_id=id.ToList().Last()
+                                                 ,item_id=item_id
+                                                 ,quantity=sl }); 
+            }
+            db.SaveChanges();
+
+        }
+        private bool LuuHoaDon()
+        {
+            try
+            {
+                if (lv_item.Items.Count > 0)
+                {
+                    Update_Quantity();
+                }
+                else
+                {
+                    MessageBox.Show("Không có hàng hóa trong danh sách để lưu");
+                    return false;
+                }
+
+                if (tb_tenkhach.Text == "" || tb_tiennhan.Text == "")
+                {
+                    MessageBox.Show("Vui long nhap đầy đủ thông tin");
+                    return false;
+                }
+                Add_Order();
+                Add_LineItem();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool Saved = false;
+        private void btn_luu_Click(object sender, EventArgs e)
+        {
+            if (Saved == false)
+            {
+
+                if (MessageBox.Show("Bạn Muốn lưu hóa đơn", "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (LuuHoaDon() == true)
+                    {
+                        Saved = true;
+                        MessageBox.Show("Đã lưu hóa đơn");
+                    }
+                    else
+                        MessageBox.Show("Lưu hóa đơn không thành công");
+                }
+            }
+            else
+                MessageBox.Show("Hóa đơn đã được lưu");           
+        }
+
+        private void btn_thanhtoan_Click(object sender, EventArgs e)
+        {
+            if(tb_tiennhan.Text!="")
+            {
+                double tien_thua = Convert.ToDouble(tb_tiennhan.Text) - Convert.ToDouble(lbl_TongCong.Text);
+                lbl_tienthua.Text = tien_thua.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập tiền nhận!");
+            }    
+        }
+
+        private void btn_new_hoadon_Click(object sender, EventArgs e)
+        {
+            lv_item.Items.Clear();
+            Saved = false;
+            
         }
     }
 }

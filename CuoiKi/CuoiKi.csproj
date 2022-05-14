@@ -63,6 +63,7 @@
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Class\C_Item.cs" />
+    <Compile Include="Class\C_Order.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>

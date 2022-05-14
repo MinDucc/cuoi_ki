@@ -131,7 +131,7 @@
             this.tb_account.Name = "tb_account";
             this.tb_account.Size = new System.Drawing.Size(257, 29);
             this.tb_account.TabIndex = 2;
-            this.tb_account.Text = "tmd";
+            this.tb_account.Text = "HQM";
             // 
             // label2
             // 
