@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_new_hoadon = new System.Windows.Forms.Button();
             this.btn_thanhtoan = new System.Windows.Forms.Button();
             this.tb_tenkhach = new System.Windows.Forms.TextBox();
             this.lbl_TongCong = new System.Windows.Forms.Label();
@@ -62,7 +63,10 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_new_hoadon = new System.Windows.Forms.Button();
+            this.tbx_ma_kh = new System.Windows.Forms.TextBox();
+            this.tbx_diachi = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -71,6 +75,10 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.tbx_diachi);
+            this.panel1.Controls.Add(this.tbx_ma_kh);
             this.panel1.Controls.Add(this.btn_new_hoadon);
             this.panel1.Controls.Add(this.btn_thanhtoan);
             this.panel1.Controls.Add(this.tb_tenkhach);
@@ -86,12 +94,22 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(904, 300);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(329, 338);
+            this.panel1.Size = new System.Drawing.Size(329, 454);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_new_hoadon
+            // 
+            this.btn_new_hoadon.Location = new System.Drawing.Point(176, 342);
+            this.btn_new_hoadon.Name = "btn_new_hoadon";
+            this.btn_new_hoadon.Size = new System.Drawing.Size(130, 31);
+            this.btn_new_hoadon.TabIndex = 15;
+            this.btn_new_hoadon.Text = "Hóa đơn mới";
+            this.btn_new_hoadon.UseVisualStyleBackColor = true;
+            this.btn_new_hoadon.Click += new System.EventHandler(this.btn_new_hoadon_Click);
             // 
             // btn_thanhtoan
             // 
-            this.btn_thanhtoan.Location = new System.Drawing.Point(11, 258);
+            this.btn_thanhtoan.Location = new System.Drawing.Point(12, 341);
             this.btn_thanhtoan.Name = "btn_thanhtoan";
             this.btn_thanhtoan.Size = new System.Drawing.Size(124, 32);
             this.btn_thanhtoan.TabIndex = 14;
@@ -101,7 +119,7 @@
             // 
             // tb_tenkhach
             // 
-            this.tb_tenkhach.Location = new System.Drawing.Point(114, 210);
+            this.tb_tenkhach.Location = new System.Drawing.Point(129, 185);
             this.tb_tenkhach.Multiline = true;
             this.tb_tenkhach.Name = "tb_tenkhach";
             this.tb_tenkhach.Size = new System.Drawing.Size(173, 25);
@@ -110,7 +128,7 @@
             // lbl_TongCong
             // 
             this.lbl_TongCong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_TongCong.Location = new System.Drawing.Point(111, 53);
+            this.lbl_TongCong.Location = new System.Drawing.Point(126, 45);
             this.lbl_TongCong.Name = "lbl_TongCong";
             this.lbl_TongCong.Size = new System.Drawing.Size(176, 25);
             this.lbl_TongCong.TabIndex = 7;
@@ -118,7 +136,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 218);
+            this.label14.Location = new System.Drawing.Point(-4, 193);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(111, 17);
             this.label14.TabIndex = 12;
@@ -126,7 +144,7 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(172, 296);
+            this.btn_back.Location = new System.Drawing.Point(176, 405);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(130, 32);
             this.btn_back.TabIndex = 11;
@@ -136,7 +154,7 @@
             // 
             // btn_luu
             // 
-            this.btn_luu.Location = new System.Drawing.Point(11, 296);
+            this.btn_luu.Location = new System.Drawing.Point(15, 405);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(124, 32);
             this.btn_luu.TabIndex = 6;
@@ -147,14 +165,14 @@
             // lbl_tienthua
             // 
             this.lbl_tienthua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_tienthua.Location = new System.Drawing.Point(111, 162);
+            this.lbl_tienthua.Location = new System.Drawing.Point(126, 141);
             this.lbl_tienthua.Name = "lbl_tienthua";
             this.lbl_tienthua.Size = new System.Drawing.Size(176, 25);
             this.lbl_tienthua.TabIndex = 10;
             // 
             // tb_tiennhan
             // 
-            this.tb_tiennhan.Location = new System.Drawing.Point(111, 101);
+            this.tb_tiennhan.Location = new System.Drawing.Point(126, 90);
             this.tb_tiennhan.Multiline = true;
             this.tb_tiennhan.Name = "tb_tiennhan";
             this.tb_tiennhan.Size = new System.Drawing.Size(176, 25);
@@ -163,7 +181,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 109);
+            this.label4.Location = new System.Drawing.Point(12, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 17);
             this.label4.TabIndex = 3;
@@ -181,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 61);
+            this.label2.Location = new System.Drawing.Point(8, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 1;
@@ -190,7 +208,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 162);
+            this.label1.Location = new System.Drawing.Point(12, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 0;
@@ -323,7 +341,7 @@
             this.panel4.Controls.Add(this.lv_item);
             this.panel4.Location = new System.Drawing.Point(10, 12);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(879, 626);
+            this.panel4.Size = new System.Drawing.Size(879, 742);
             this.panel4.TabIndex = 9;
             // 
             // label7
@@ -344,7 +362,7 @@
             this.cbx_chon_item.FormattingEnabled = true;
             this.cbx_chon_item.Location = new System.Drawing.Point(706, 28);
             this.cbx_chon_item.Name = "cbx_chon_item";
-            this.cbx_chon_item.Size = new System.Drawing.Size(168, 265);
+            this.cbx_chon_item.Size = new System.Drawing.Size(168, 73);
             this.cbx_chon_item.TabIndex = 8;
             this.cbx_chon_item.SelectedIndexChanged += new System.EventHandler(this.cbx_chon_item_SelectedIndexChanged);
             // 
@@ -362,7 +380,7 @@
             this.lv_item.HideSelection = false;
             this.lv_item.Location = new System.Drawing.Point(3, 3);
             this.lv_item.Name = "lv_item";
-            this.lv_item.Size = new System.Drawing.Size(697, 613);
+            this.lv_item.Size = new System.Drawing.Size(697, 738);
             this.lv_item.TabIndex = 2;
             this.lv_item.UseCompatibleStateImageBehavior = false;
             this.lv_item.View = System.Windows.Forms.View.Details;
@@ -392,21 +410,43 @@
             this.columnHeader5.Text = "Thành Tiền";
             this.columnHeader5.Width = 146;
             // 
-            // btn_new_hoadon
+            // tbx_ma_kh
             // 
-            this.btn_new_hoadon.Location = new System.Drawing.Point(172, 258);
-            this.btn_new_hoadon.Name = "btn_new_hoadon";
-            this.btn_new_hoadon.Size = new System.Drawing.Size(130, 31);
-            this.btn_new_hoadon.TabIndex = 15;
-            this.btn_new_hoadon.Text = "Hóa đơn mới";
-            this.btn_new_hoadon.UseVisualStyleBackColor = true;
-            this.btn_new_hoadon.Click += new System.EventHandler(this.btn_new_hoadon_Click);
+            this.tbx_ma_kh.Location = new System.Drawing.Point(129, 231);
+            this.tbx_ma_kh.Name = "tbx_ma_kh";
+            this.tbx_ma_kh.Size = new System.Drawing.Size(177, 22);
+            this.tbx_ma_kh.TabIndex = 16;
+            // 
+            // tbx_diachi
+            // 
+            this.tbx_diachi.Location = new System.Drawing.Point(129, 276);
+            this.tbx_diachi.Name = "tbx_diachi";
+            this.tbx_diachi.Size = new System.Drawing.Size(173, 22);
+            this.tbx_diachi.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 236);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(105, 17);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Mã khách hàng";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 281);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 17);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Địa chỉ";
             // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 641);
+            this.ClientSize = new System.Drawing.Size(1245, 766);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -461,6 +501,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_thanhtoan;
         private System.Windows.Forms.Button btn_new_hoadon;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbx_diachi;
+        private System.Windows.Forms.TextBox tbx_ma_kh;
     }
 }
 

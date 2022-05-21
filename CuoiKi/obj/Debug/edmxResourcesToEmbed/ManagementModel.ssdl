@@ -9,6 +9,15 @@
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="Position" Type="nvarchar" MaxLength="20" />
   </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_address" Type="nvarchar" MaxLength="50" />
+    <Property Name="tolal" Type="float" />
+  </EntityType>
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="employee_id" />
@@ -49,7 +58,7 @@
     </Key>
     <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="order_date" Type="datetime" />
-    <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_id" Type="int" />
     <Property Name="employee_id" Type="int" />
     <Property Name="total" Type="float" />
   </EntityType>
@@ -59,6 +68,13 @@
     </Key>
     <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="product_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="ma_voucher" />
+    </Key>
+    <Property Name="ma_voucher" Type="int" Nullable="false" />
+    <Property Name="gia_voucher" Type="float" />
   </EntityType>
   <Association Name="FK__Employee__employ__2E1BDC42">
     <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
@@ -108,6 +124,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Orders__customer__38996AB5">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Orders__employee__300424B4">
     <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -122,11 +150,13 @@
   </Association>
   <EntityContainer Name="ManagementDFModelStoreContainer">
     <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Lineitem" EntityType="Self.Lineitem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Employee__employ__2E1BDC42" Association="Self.FK__Employee__employ__2E1BDC42">
       <End Role="Accounts" EntitySet="Accounts" />
       <End Role="Employee" EntitySet="Employee" />
@@ -142,6 +172,10 @@
     <AssociationSet Name="FK__Lineitem__order___30F848ED" Association="Self.FK__Lineitem__order___30F848ED">
       <End Role="Orders" EntitySet="Orders" />
       <End Role="Lineitem" EntitySet="Lineitem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__customer__38996AB5" Association="Self.FK__Orders__customer__38996AB5">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK__Orders__employee__300424B4" Association="Self.FK__Orders__employee__300424B4">
       <End Role="Employee" EntitySet="Employee" />

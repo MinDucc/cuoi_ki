@@ -15,6 +15,7 @@ namespace CuoiKi
         public DangNhap()
         {
             InitializeComponent();
+            AcceptButton = btn_DN;
         }
 
        

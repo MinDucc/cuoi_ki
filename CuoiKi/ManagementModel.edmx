@@ -14,6 +14,15 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Position" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="tolal" Type="float" />
+        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="employee_id" />
@@ -54,7 +63,7 @@
           </Key>
           <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="order_date" Type="datetime" />
-          <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_id" Type="int" />
           <Property Name="employee_id" Type="int" />
           <Property Name="total" Type="float" />
         </EntityType>
@@ -64,6 +73,13 @@
           </Key>
           <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="product_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Voucher">
+          <Key>
+            <PropertyRef Name="ma_voucher" />
+          </Key>
+          <Property Name="ma_voucher" Type="int" Nullable="false" />
+          <Property Name="gia_voucher" Type="float" />
         </EntityType>
         <Association Name="FK__Employee__employ__2E1BDC42">
           <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
@@ -113,6 +129,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Orders__customer__38996AB5">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Orders__employee__300424B4">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -127,11 +155,13 @@
         </Association>
         <EntityContainer Name="ManagementDFModelStoreContainer">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lineitem" EntityType="Self.Lineitem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Employee__employ__2E1BDC42" Association="Self.FK__Employee__employ__2E1BDC42">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Employee" EntitySet="Employee" />
@@ -147,6 +177,10 @@
           <AssociationSet Name="FK__Lineitem__order___30F848ED" Association="Self.FK__Lineitem__order___30F848ED">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="Lineitem" EntitySet="Lineitem" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__customer__38996AB5" Association="Self.FK__Orders__customer__38996AB5">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
           <AssociationSet Name="FK__Orders__employee__300424B4" Association="Self.FK__Orders__employee__300424B4">
             <End Role="Employee" EntitySet="Employee" />
@@ -180,7 +214,7 @@
           <Property Name="shift" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="salary" Type="Double" />
           <NavigationProperty Name="Account" Relationship="Self.FK__Employee__employ__2E1BDC42" FromRole="Employee" ToRole="Accounts" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__employee__300424B4" FromRole="Employee" ToRole="Orders" />
+          <NavigationProperty Name="Orders" Relationship="ManagementDFModel.FK__Orders__employee__300424B4" FromRole="Employee" ToRole="Order" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
@@ -205,19 +239,7 @@
           <Property Name="item_id" Type="Int32" Nullable="false" />
           <Property Name="quantity" Type="Int32" />
           <NavigationProperty Name="Item" Relationship="Self.FK__Lineitem__item_i__31EC6D26" FromRole="Lineitem" ToRole="Item" />
-          <NavigationProperty Name="Order" Relationship="Self.FK__Lineitem__order___30F848ED" FromRole="Lineitem" ToRole="Orders" />
-        </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="order_id" />
-          </Key>
-          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="order_date" Type="DateTime" Precision="3" />
-          <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="employee_id" Type="Int32" />
-          <Property Name="total" Type="Double" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__Orders__employee__300424B4" FromRole="Orders" ToRole="Employee" />
-          <NavigationProperty Name="Lineitems" Relationship="Self.FK__Lineitem__order___30F848ED" FromRole="Orders" ToRole="Lineitem" />
+          <NavigationProperty Name="Order" Relationship="ManagementDFModel.FK__Lineitem__order___30F848ED" FromRole="Lineitem" ToRole="Order" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -236,18 +258,6 @@
             </Principal>
             <Dependent Role="Employee">
               <PropertyRef Name="employee_account" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Orders__employee__300424B4">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
-          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Employee">
-              <PropertyRef Name="employee_id" />
-            </Principal>
-            <Dependent Role="Orders">
-              <PropertyRef Name="employee_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -275,32 +285,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Lineitem__order___30F848ED">
-          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
-          <End Role="Lineitem" Type="Self.Lineitem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Orders">
-              <PropertyRef Name="order_id" />
-            </Principal>
-            <Dependent Role="Lineitem">
-              <PropertyRef Name="order_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="ManagementDFContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Items" EntityType="Self.Item" />
           <EntitySet Name="Lineitems" EntityType="Self.Lineitem" />
-          <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <AssociationSet Name="FK__Employee__employ__2E1BDC42" Association="Self.FK__Employee__employ__2E1BDC42">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Employee" EntitySet="Employees" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Orders__employee__300424B4" Association="Self.FK__Orders__employee__300424B4">
-            <End Role="Employee" EntitySet="Employees" />
-            <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
           <AssociationSet Name="FK__Item__product_id__2F10007B" Association="Self.FK__Item__product_id__2F10007B">
             <End Role="Product" EntitySet="Products" />
@@ -310,11 +303,88 @@
             <End Role="Item" EntitySet="Items" />
             <End Role="Lineitem" EntitySet="Lineitems" />
           </AssociationSet>
-          <AssociationSet Name="FK__Lineitem__order___30F848ED" Association="Self.FK__Lineitem__order___30F848ED">
-            <End Role="Orders" EntitySet="Orders" />
+          <EntitySet Name="Customers" EntityType="ManagementDFModel.Customer" />
+          <EntitySet Name="Orders" EntityType="ManagementDFModel.Order" />
+          <EntitySet Name="Vouchers" EntityType="ManagementDFModel.Voucher" />
+          <AssociationSet Name="FK__Orders__customer__38996AB5" Association="ManagementDFModel.FK__Orders__customer__38996AB5">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__employee__300424B4" Association="ManagementDFModel.FK__Orders__employee__300424B4">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lineitem__order___30F848ED" Association="ManagementDFModel.FK__Lineitem__order___30F848ED">
+            <End Role="Order" EntitySet="Orders" />
             <End Role="Lineitem" EntitySet="Lineitems" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customer_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tolal" Type="Double" />
+          <NavigationProperty Name="Orders" Relationship="ManagementDFModel.FK__Orders__customer__38996AB5" FromRole="Customer" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_date" Type="DateTime" Precision="3" />
+          <Property Name="customer_id" Type="Int32" />
+          <Property Name="employee_id" Type="Int32" />
+          <Property Name="total" Type="Double" />
+          <NavigationProperty Name="Customer" Relationship="ManagementDFModel.FK__Orders__customer__38996AB5" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="ManagementDFModel.FK__Orders__employee__300424B4" FromRole="Order" ToRole="Employee" />
+          <NavigationProperty Name="Lineitems" Relationship="ManagementDFModel.FK__Lineitem__order___30F848ED" FromRole="Order" ToRole="Lineitem" />
+        </EntityType>
+        <EntityType Name="Voucher">
+          <Key>
+            <PropertyRef Name="ma_voucher" />
+          </Key>
+          <Property Name="ma_voucher" Type="Int32" Nullable="false" />
+          <Property Name="gia_voucher" Type="Double" />
+        </EntityType>
+        <Association Name="FK__Orders__customer__38996AB5">
+          <End Type="ManagementDFModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="ManagementDFModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__employee__300424B4">
+          <End Type="ManagementDFModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="ManagementDFModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lineitem__order___30F848ED">
+          <End Type="ManagementDFModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="ManagementDFModel.Lineitem" Role="Lineitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Lineitem">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -367,22 +437,40 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="ManagementDFModel.Order">
-              <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="order_id" ColumnName="order_id" />
-                <ScalarProperty Name="order_date" ColumnName="order_date" />
-                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
-                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
-                <ScalarProperty Name="total" ColumnName="total" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="ManagementDFModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ManagementDFModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="tolal" ColumnName="tolal" />
+                <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="ManagementDFModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vouchers">
+            <EntityTypeMapping TypeName="ManagementDFModel.Voucher">
+              <MappingFragment StoreEntitySet="Voucher">
+                <ScalarProperty Name="gia_voucher" ColumnName="gia_voucher" />
+                <ScalarProperty Name="ma_voucher" ColumnName="ma_voucher" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

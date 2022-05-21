@@ -47,22 +47,40 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="ManagementDFModel.Order">
-        <MappingFragment StoreEntitySet="Orders">
-          <ScalarProperty Name="order_id" ColumnName="order_id" />
-          <ScalarProperty Name="order_date" ColumnName="order_date" />
-          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
-          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
-          <ScalarProperty Name="total" ColumnName="total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="ManagementDFModel.Product">
         <MappingFragment StoreEntitySet="Product">
           <ScalarProperty Name="product_id" ColumnName="product_id" />
           <ScalarProperty Name="product_name" ColumnName="product_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ManagementDFModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="tolal" ColumnName="tolal" />
+          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ManagementDFModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vouchers">
+      <EntityTypeMapping TypeName="ManagementDFModel.Voucher">
+        <MappingFragment StoreEntitySet="Voucher">
+          <ScalarProperty Name="gia_voucher" ColumnName="gia_voucher" />
+          <ScalarProperty Name="ma_voucher" ColumnName="ma_voucher" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

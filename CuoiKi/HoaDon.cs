@@ -72,6 +72,8 @@ namespace CuoiKi
         private double TongTien = 0;
         private void btn_them_Click(object sender, EventArgs e)
         {
+            if (lbl_id.Text == "")
+                return;
             foreach (ListViewItem it in lv_item.Items)
             {
                 if (it.Text == lbl_id.Text)
@@ -144,7 +146,7 @@ namespace CuoiKi
 
         private void cbx_id_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbx_chon_item.SelectedItem != null)
+            if (cbx_id.SelectedItem != null)
             {
                 var result = from c in ListItem
                              where c.Id.ToString() == cbx_id.SelectedItem.ToString()
@@ -173,32 +175,67 @@ namespace CuoiKi
                 }
             }
         }
-        private void Add_Order()
+        private bool Add_Database()
         {
+            // Add_Customer
+            int cus_id = int.Parse(tbx_ma_kh.Text);
+            var customer_id = from c in db.Customers
+                              where c.customer_id == cus_id
+                              select c;
 
+            if (customer_id.Count() > 0)
+            {
+                tb_sl.Text = customer_id.First().tolal.ToString();
+                customer_id.First().tolal += TongTien;
+            }
+            else
+            {
+                if (tb_tenkhach.Text == "" || tbx_diachi.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng");
+                    return false;
+                }
+                db.Customers.Add(new Customer()
+                {
+                    customer_id = Convert.ToInt32(tbx_ma_kh.Text)
+                                                 ,
+                    customer_name = tb_tenkhach.Text
+                                                 ,
+                    customer_address = tbx_diachi.Text
+                                                 ,
+                    tolal = TongTien
+                });
+            }
+
+            /// Add_order
             Order order = new Order() { order_date = DateTime.Now
-                                        ,customer_name=tb_tenkhach.Text
+                                        ,customer_id=Convert.ToInt32(tbx_ma_kh.Text)
                                         ,employee_id=employee_id
                                         ,total=TongTien };
             
             
             db.Orders.Add(order);
-            db.SaveChanges();
-        }
-        private void Add_LineItem()
-        {
+
+            /// Add LineItem
             var id = db.Orders.Select(c => c.order_id);
             foreach (ListViewItem item in lv_item.Items)
             {
                 int item_id = Convert.ToInt32(item.SubItems[0].Text);
                 int sl = Convert.ToInt32(item.SubItems[2].Text);
-                db.Lineitems.Add(new Lineitem() {order_id=id.ToList().Last()
-                                                 ,item_id=item_id
-                                                 ,quantity=sl }); 
+                db.Lineitems.Add(new Lineitem()
+                {
+                    order_id = id.ToList().Last()
+                                                 ,
+                    item_id = item_id
+                                                 ,
+                    quantity = sl
+                });
             }
             db.SaveChanges();
-
+            return true;
         }
+        
+        
         private bool LuuHoaDon()
         {
             try
@@ -213,24 +250,27 @@ namespace CuoiKi
                     return false;
                 }
 
-                if (tb_tenkhach.Text == "" || tb_tiennhan.Text == "")
+                if (tbx_ma_kh.Text == "" || tb_tiennhan.Text == "")
                 {
-                    MessageBox.Show("Vui long nhap đầy đủ thông tin");
+                    MessageBox.Show("Vui lòng nhập tiền nhận và mã khách hàng");
                     return false;
                 }
-                Add_Order();
-                Add_LineItem();
-                return true;
+                
+                return Add_Database() ;
             }
             catch
             {
+                MessageBox.Show("Lưu hóa đơn thất bại");
                 return false;
             }
+            
         }
 
         private bool Saved = false;
         private void btn_luu_Click(object sender, EventArgs e)
         {
+
+
             if (Saved == false)
             {
 
@@ -240,13 +280,11 @@ namespace CuoiKi
                     {
                         Saved = true;
                         MessageBox.Show("Đã lưu hóa đơn");
-                    }
-                    else
-                        MessageBox.Show("Lưu hóa đơn không thành công");
+                    }                   
                 }
             }
             else
-                MessageBox.Show("Hóa đơn đã được lưu");           
+                MessageBox.Show("Hóa đơn đã được lưu");
         }
 
         private void btn_thanhtoan_Click(object sender, EventArgs e)

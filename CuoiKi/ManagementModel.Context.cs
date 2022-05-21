@@ -29,7 +29,9 @@ namespace CuoiKi
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Lineitem> Lineitems { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Voucher> Vouchers { get; set; }
     }
 }

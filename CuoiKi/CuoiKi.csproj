@@ -64,6 +64,9 @@
     </Compile>
     <Compile Include="Class\C_Item.cs" />
     <Compile Include="Class\C_Order.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>ManagementModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
@@ -143,6 +146,9 @@
     </Compile>
     <Compile Include="QuanLi.Designer.cs">
       <DependentUpon>QuanLi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voucher.cs">
+      <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="TaiKhoan.resx">
       <DependentUpon>TaiKhoan.cs</DependentUpon>

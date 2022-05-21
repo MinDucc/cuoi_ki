@@ -12,23 +12,20 @@ namespace CuoiKi
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Customer()
         {
-            this.Lineitems = new HashSet<Lineitem>();
+            this.Orders = new HashSet<Order>();
         }
     
-        public int order_id { get; set; }
-        public Nullable<System.DateTime> order_date { get; set; }
-        public Nullable<int> customer_id { get; set; }
-        public Nullable<int> employee_id { get; set; }
-        public Nullable<double> total { get; set; }
+        public int customer_id { get; set; }
+        public string customer_name { get; set; }
+        public string customer_address { get; set; }
+        public Nullable<double> tolal { get; set; }
     
-        public virtual Customer Customer { get; set; }
-        public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lineitem> Lineitems { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

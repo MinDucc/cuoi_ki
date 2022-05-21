@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.btn_back = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dt_ngaymua = new System.Windows.Forms.DateTimePicker();
+            this.tbx_ma = new System.Windows.Forms.TextBox();
+            this.tbx_ten = new System.Windows.Forms.TextBox();
+            this.btn_tim = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_yeucau = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv_Order = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).BeginInit();
             this.SuspendLayout();
@@ -56,39 +57,40 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // dateTimePicker1
+            // dt_ngaymua
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(147, 129);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(277, 22);
-            this.dateTimePicker1.TabIndex = 44;
+            this.dt_ngaymua.Location = new System.Drawing.Point(147, 131);
+            this.dt_ngaymua.Margin = new System.Windows.Forms.Padding(4);
+            this.dt_ngaymua.Name = "dt_ngaymua";
+            this.dt_ngaymua.Size = new System.Drawing.Size(277, 22);
+            this.dt_ngaymua.TabIndex = 44;
             // 
-            // textBox2
+            // tbx_ma
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 91);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 22);
-            this.textBox2.TabIndex = 43;
+            this.tbx_ma.Location = new System.Drawing.Point(147, 91);
+            this.tbx_ma.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_ma.Name = "tbx_ma";
+            this.tbx_ma.Size = new System.Drawing.Size(277, 22);
+            this.tbx_ma.TabIndex = 43;
             // 
-            // textBox1
+            // tbx_ten
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 59);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 22);
-            this.textBox1.TabIndex = 42;
+            this.tbx_ten.Location = new System.Drawing.Point(147, 59);
+            this.tbx_ten.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_ten.Name = "tbx_ten";
+            this.tbx_ten.Size = new System.Drawing.Size(277, 22);
+            this.tbx_ten.TabIndex = 42;
             // 
-            // button1
+            // btn_tim
             // 
-            this.button1.Location = new System.Drawing.Point(454, 57);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 57);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_tim.Location = new System.Drawing.Point(454, 66);
+            this.btn_tim.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_tim.Name = "btn_tim";
+            this.btn_tim.Size = new System.Drawing.Size(111, 47);
+            this.btn_tim.TabIndex = 41;
+            this.btn_tim.Text = "Tìm";
+            this.btn_tim.UseVisualStyleBackColor = true;
+            this.btn_tim.Click += new System.EventHandler(this.btn_tim_Click);
             // 
             // label5
             // 
@@ -130,18 +132,19 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Chọn yêu cầu";
             // 
-            // comboBox1
+            // cbx_yeucau
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbx_yeucau.FormattingEnabled = true;
+            this.cbx_yeucau.Items.AddRange(new object[] {
             "Xem hóa đơn theo ngày",
             "Xem hóa đơn theo mã hóa đơn",
             "Xem hóa đơn theo tên khách hàng"});
-            this.comboBox1.Location = new System.Drawing.Point(147, 9);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(328, 24);
-            this.comboBox1.TabIndex = 36;
+            this.cbx_yeucau.Location = new System.Drawing.Point(147, 9);
+            this.cbx_yeucau.Margin = new System.Windows.Forms.Padding(4);
+            this.cbx_yeucau.Name = "cbx_yeucau";
+            this.cbx_yeucau.Size = new System.Drawing.Size(277, 24);
+            this.cbx_yeucau.TabIndex = 36;
+            this.cbx_yeucau.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -175,21 +178,32 @@
             this.dgv_Order.Size = new System.Drawing.Size(862, 230);
             this.dgv_Order.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(454, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 47);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Xem tất cả";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // QLHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 443);
-            this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_back);
+            this.Controls.Add(this.dt_ngaymua);
+            this.Controls.Add(this.tbx_ma);
+            this.Controls.Add(this.tbx_ten);
+            this.Controls.Add(this.btn_tim);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbx_yeucau);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "QLHoaDon";
@@ -207,17 +221,18 @@
         #endregion
 
         private System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dt_ngaymua;
+        private System.Windows.Forms.TextBox tbx_ma;
+        private System.Windows.Forms.TextBox tbx_ten;
+        private System.Windows.Forms.Button btn_tim;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_yeucau;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgv_Order;
+        private System.Windows.Forms.Button button1;
     }
 }
