@@ -30,7 +30,7 @@
         {
             this.btn_hangton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dt_hsd = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_hsd = new System.Windows.Forms.Button();
             this.tbx_hangton = new System.Windows.Forms.TextBox();
@@ -48,25 +48,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lv_hanghoa = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dgv_show = new System.Windows.Forms.DataGridView();
+            this.btn_all = new System.Windows.Forms.Button();
+            this.ckb_them = new System.Windows.Forms.CheckBox();
+            this.ckb_sua = new System.Windows.Forms.CheckBox();
+            this.ckb_xoa = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_show)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_hangton
             // 
-            this.btn_hangton.Location = new System.Drawing.Point(630, 82);
+            this.btn_hangton.Location = new System.Drawing.Point(654, 15);
             this.btn_hangton.Margin = new System.Windows.Forms.Padding(4);
             this.btn_hangton.Name = "btn_hangton";
-            this.btn_hangton.Size = new System.Drawing.Size(156, 60);
+            this.btn_hangton.Size = new System.Drawing.Size(156, 57);
             this.btn_hangton.TabIndex = 59;
             this.btn_hangton.Text = "Số lượng hàng tồn còn ít";
             this.btn_hangton.UseVisualStyleBackColor = true;
+            this.btn_hangton.Click += new System.EventHandler(this.btn_hangton_Click);
             // 
             // label1
             // 
@@ -79,13 +79,13 @@
             this.label1.TabIndex = 41;
             this.label1.Text = "Thông tin hàng hóa";
             // 
-            // dateTimePicker1
+            // dt_hsd
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 192);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(279, 22);
-            this.dateTimePicker1.TabIndex = 58;
+            this.dt_hsd.Location = new System.Drawing.Point(149, 192);
+            this.dt_hsd.Margin = new System.Windows.Forms.Padding(4);
+            this.dt_hsd.Name = "dt_hsd";
+            this.dt_hsd.Size = new System.Drawing.Size(279, 22);
+            this.dt_hsd.TabIndex = 58;
             // 
             // label7
             // 
@@ -99,13 +99,14 @@
             // 
             // btn_hsd
             // 
-            this.btn_hsd.Location = new System.Drawing.Point(453, 160);
+            this.btn_hsd.Location = new System.Drawing.Point(654, 154);
             this.btn_hsd.Margin = new System.Windows.Forms.Padding(4);
             this.btn_hsd.Name = "btn_hsd";
-            this.btn_hsd.Size = new System.Drawing.Size(156, 60);
+            this.btn_hsd.Size = new System.Drawing.Size(156, 58);
             this.btn_hsd.TabIndex = 56;
             this.btn_hsd.Text = "Hàng hết HSD";
             this.btn_hsd.UseVisualStyleBackColor = true;
+            this.btn_hsd.Click += new System.EventHandler(this.btn_hsd_Click);
             // 
             // tbx_hangton
             // 
@@ -137,10 +138,10 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(630, 160);
+            this.btn_back.Location = new System.Drawing.Point(654, 220);
             this.btn_back.Margin = new System.Windows.Forms.Padding(4);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(156, 60);
+            this.btn_back.Size = new System.Drawing.Size(156, 44);
             this.btn_back.TabIndex = 52;
             this.btn_back.Text = "Trở về";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -148,33 +149,36 @@
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(453, 82);
+            this.btn_sua.Location = new System.Drawing.Point(453, 85);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(4);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(156, 60);
             this.btn_sua.TabIndex = 51;
             this.btn_sua.Text = "Sửa thông tin";
             this.btn_sua.UseVisualStyleBackColor = true;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(630, 15);
+            this.btn_xoa.Location = new System.Drawing.Point(453, 156);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(4);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(156, 53);
+            this.btn_xoa.Size = new System.Drawing.Size(156, 61);
             this.btn_xoa.TabIndex = 50;
             this.btn_xoa.Text = "Xóa mặt hàng";
             this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // bt_them
             // 
             this.bt_them.Location = new System.Drawing.Point(453, 15);
             this.bt_them.Margin = new System.Windows.Forms.Padding(4);
             this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(156, 53);
+            this.bt_them.Size = new System.Drawing.Size(156, 60);
             this.bt_them.TabIndex = 49;
             this.bt_them.Text = "Thêm mặt hàng ";
             this.bt_them.UseVisualStyleBackColor = true;
+            this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
             // 
             // tbx_giaban
             // 
@@ -241,70 +245,76 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lv_hanghoa);
-            this.panel1.Location = new System.Drawing.Point(19, 258);
+            this.panel1.Controls.Add(this.dgv_show);
+            this.panel1.Location = new System.Drawing.Point(13, 265);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 288);
+            this.panel1.Size = new System.Drawing.Size(937, 313);
             this.panel1.TabIndex = 40;
             // 
-            // lv_hanghoa
+            // dgv_show
             // 
-            this.lv_hanghoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader4,
-            this.columnHeader6});
-            this.lv_hanghoa.GridLines = true;
-            this.lv_hanghoa.HideSelection = false;
-            this.lv_hanghoa.Location = new System.Drawing.Point(4, 10);
-            this.lv_hanghoa.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_hanghoa.Name = "lv_hanghoa";
-            this.lv_hanghoa.Size = new System.Drawing.Size(827, 271);
-            this.lv_hanghoa.TabIndex = 0;
-            this.lv_hanghoa.UseCompatibleStateImageBehavior = false;
-            this.lv_hanghoa.View = System.Windows.Forms.View.Details;
+            this.dgv_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_show.Location = new System.Drawing.Point(5, 5);
+            this.dgv_show.Name = "dgv_show";
+            this.dgv_show.RowHeadersWidth = 51;
+            this.dgv_show.RowTemplate.Height = 24;
+            this.dgv_show.Size = new System.Drawing.Size(932, 308);
+            this.dgv_show.TabIndex = 0;
+            this.dgv_show.SelectionChanged += new System.EventHandler(this.dgv_show_SelectionChanged);
             // 
-            // columnHeader1
+            // btn_all
             // 
-            this.columnHeader1.Text = "Mã hàng hóa";
-            this.columnHeader1.Width = 90;
+            this.btn_all.Location = new System.Drawing.Point(654, 82);
+            this.btn_all.Name = "btn_all";
+            this.btn_all.Size = new System.Drawing.Size(156, 57);
+            this.btn_all.TabIndex = 61;
+            this.btn_all.Text = "Xem tất cả";
+            this.btn_all.UseVisualStyleBackColor = true;
+            this.btn_all.Click += new System.EventHandler(this.btn_all_Click);
             // 
-            // columnHeader2
+            // ckb_them
             // 
-            this.columnHeader2.Text = "Tên hàng hóa";
-            this.columnHeader2.Width = 140;
+            this.ckb_them.AutoSize = true;
+            this.ckb_them.Location = new System.Drawing.Point(616, 36);
+            this.ckb_them.Name = "ckb_them";
+            this.ckb_them.Size = new System.Drawing.Size(18, 17);
+            this.ckb_them.TabIndex = 62;
+            this.ckb_them.UseVisualStyleBackColor = true;
+            this.ckb_them.CheckedChanged += new System.EventHandler(this.ckb_them_CheckedChanged);
             // 
-            // columnHeader5
+            // ckb_sua
             // 
-            this.columnHeader5.Text = "Giá bán ra";
-            this.columnHeader5.Width = 80;
+            this.ckb_sua.AutoSize = true;
+            this.ckb_sua.Location = new System.Drawing.Point(616, 108);
+            this.ckb_sua.Name = "ckb_sua";
+            this.ckb_sua.Size = new System.Drawing.Size(18, 17);
+            this.ckb_sua.TabIndex = 63;
+            this.ckb_sua.UseVisualStyleBackColor = true;
+            this.ckb_sua.CheckedChanged += new System.EventHandler(this.ckb_sua_CheckedChanged);
             // 
-            // columnHeader3
+            // ckb_xoa
             // 
-            this.columnHeader3.Text = "Số lượng tồn kho";
-            this.columnHeader3.Width = 116;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Giá mua vào";
-            this.columnHeader4.Width = 102;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Hạn sử dụng";
-            this.columnHeader6.Width = 106;
+            this.ckb_xoa.AutoSize = true;
+            this.ckb_xoa.Location = new System.Drawing.Point(616, 179);
+            this.ckb_xoa.Name = "ckb_xoa";
+            this.ckb_xoa.Size = new System.Drawing.Size(18, 17);
+            this.ckb_xoa.TabIndex = 64;
+            this.ckb_xoa.UseVisualStyleBackColor = true;
+            this.ckb_xoa.CheckedChanged += new System.EventHandler(this.ckb_xoa_CheckedChanged);
             // 
             // HangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 566);
+            this.ClientSize = new System.Drawing.Size(963, 591);
+            this.Controls.Add(this.ckb_xoa);
+            this.Controls.Add(this.ckb_sua);
+            this.Controls.Add(this.ckb_them);
+            this.Controls.Add(this.btn_all);
             this.Controls.Add(this.btn_hangton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dt_hsd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_hsd);
             this.Controls.Add(this.tbx_hangton);
@@ -328,6 +338,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HangHoa_FormClosed);
             this.Load += new System.EventHandler(this.HangHoa_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_show)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,7 +348,7 @@
 
         private System.Windows.Forms.Button btn_hangton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dt_hsd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_hsd;
         private System.Windows.Forms.TextBox tbx_hangton;
@@ -355,12 +366,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView lv_hanghoa;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.DataGridView dgv_show;
+        private System.Windows.Forms.Button btn_all;
+        private System.Windows.Forms.CheckBox ckb_them;
+        private System.Windows.Forms.CheckBox ckb_sua;
+        private System.Windows.Forms.CheckBox ckb_xoa;
     }
 }

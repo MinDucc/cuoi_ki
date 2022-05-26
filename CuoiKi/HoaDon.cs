@@ -185,7 +185,6 @@ namespace CuoiKi
 
             if (customer_id.Count() > 0)
             {
-                tb_sl.Text = customer_id.First().tolal.ToString();
                 customer_id.First().tolal += TongTien;
             }
             else
@@ -215,7 +214,7 @@ namespace CuoiKi
             
             
             db.Orders.Add(order);
-
+            db.SaveChanges();
             /// Add LineItem
             var id = db.Orders.Select(c => c.order_id);
             foreach (ListViewItem item in lv_item.Items)

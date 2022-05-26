@@ -232,7 +232,9 @@
   <ItemGroup>
     <None Include="Resources\account.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Image\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="ManagementModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
