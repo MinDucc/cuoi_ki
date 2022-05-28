@@ -33,7 +33,7 @@
             this.lbl_position = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_ThongKe = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_TaiKhoan = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.panel1.Controls.Add(this.lbl_position);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.btn_ThongKe);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btn_TaiKhoan);
             this.panel1.Controls.Add(this.label5);
@@ -111,15 +111,16 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Thống Kê";
             // 
-            // button7
+            // btn_ThongKe
             // 
-            this.button7.BackgroundImage = global::CuoiKi.Properties.Resources.account;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Location = new System.Drawing.Point(525, 10);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 91);
-            this.button7.TabIndex = 12;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_ThongKe.BackgroundImage = global::CuoiKi.Properties.Resources.thống_kê;
+            this.btn_ThongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ThongKe.Location = new System.Drawing.Point(525, 10);
+            this.btn_ThongKe.Name = "btn_ThongKe";
+            this.btn_ThongKe.Size = new System.Drawing.Size(100, 91);
+            this.btn_ThongKe.TabIndex = 12;
+            this.btn_ThongKe.UseVisualStyleBackColor = true;
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
             // 
             // label6
             // 
@@ -298,7 +299,7 @@
         private System.Windows.Forms.Button btn_dx;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_TaiKhoan;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_ThongKe;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_position;
         private System.Windows.Forms.Label label8;

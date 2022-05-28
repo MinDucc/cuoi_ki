@@ -37,3 +37,4 @@ C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\EntityFramework.xml
 C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.csproj.CopyComplete
+C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.ThongKe.resources

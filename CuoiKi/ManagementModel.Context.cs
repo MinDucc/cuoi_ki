@@ -12,6 +12,8 @@ namespace CuoiKi
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ManagementDFContext : DbContext
     {
@@ -33,5 +35,15 @@ namespace CuoiKi
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Voucher> Vouchers { get; set; }
+    
+        [DbFunction("ManagementDFContext", "Doanhthu_thang")]
+        public virtual IQueryable<Doanhthu_thang_Result> Doanhthu_thang(Nullable<int> year)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Doanhthu_thang_Result>("[ManagementDFContext].[Doanhthu_thang](@year)", yearParameter);
+        }
     }
 }

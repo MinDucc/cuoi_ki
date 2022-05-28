@@ -205,9 +205,9 @@ namespace CuoiKi
                     tolal = TongTien
                 });
             }
-
+            DateTime t = new DateTime(2022,6,20);
             /// Add_order
-            Order order = new Order() { order_date = DateTime.Now
+            Order order = new Order() { order_date = t
                                         ,customer_id=Convert.ToInt32(tbx_ma_kh.Text)
                                         ,employee_id=employee_id
                                         ,total=TongTien };

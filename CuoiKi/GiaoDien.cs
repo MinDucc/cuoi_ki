@@ -172,7 +172,25 @@ namespace CuoiKi
             (sender as HoaDon).Close();  
             
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_ThongKe_Click(object sender, EventArgs e)
+        {
+            ThongKe thongke = new ThongKe();
+            thongke.exit = new ThongKe.Exit(formChild_Close);
+            thongke.Show();
+            this.Hide();
+            thongke.TroVe += Thongke_TroVe;
+        }
 
-        
+        private void Thongke_TroVe(object sender, EventArgs e)
+        {
+            this.Show();
+            (sender as ThongKe).isExit = false;
+            (sender as ThongKe).Close();
+        }
     }
 }
