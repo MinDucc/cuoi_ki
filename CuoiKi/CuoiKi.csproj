@@ -63,12 +63,27 @@
     <Compile Include="Account.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class\C_Item.cs" />
-    <Compile Include="Class\C_Order.cs" />
+    <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\ItemBLL.cs" />
+    <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\ManagementOrderBLL.cs" />
+    <Compile Include="BLL\OrderBLL.cs" />
+    <Compile Include="BLL\StatisticalBLL.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\ItemDAL.cs" />
+    <Compile Include="DAL\LoginDAL.cs" />
+    <Compile Include="DAL\ManagementOrderDAL.cs" />
+    <Compile Include="DAL\OrderDAL.cs" />
+    <Compile Include="DAL\StatisticalDAL.cs" />
     <Compile Include="Doanhthu_thang_Result.cs">
+      <DependentUpon>ManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doanhthu_tung_thang_Result.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
@@ -101,82 +116,76 @@
     <Compile Include="Product.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TaiKhoan.cs">
+    <Compile Include="formAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TaiKhoan.Designer.cs">
-      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    <Compile Include="formAccount.Designer.cs">
+      <DependentUpon>formAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="HangHoa.cs">
+    <Compile Include="formItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HangHoa.Designer.cs">
-      <DependentUpon>HangHoa.cs</DependentUpon>
+    <Compile Include="formItem.Designer.cs">
+      <DependentUpon>formItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDon.cs">
+    <Compile Include="formOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaDon.Designer.cs">
-      <DependentUpon>HoaDon.cs</DependentUpon>
+    <Compile Include="formOrder.Designer.cs">
+      <DependentUpon>formOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien.cs">
+    <Compile Include="formMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien.Designer.cs">
-      <DependentUpon>GiaoDien.cs</DependentUpon>
+    <Compile Include="formMenu.Designer.cs">
+      <DependentUpon>formMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien.cs">
+    <Compile Include="formEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <Compile Include="formEmployee.Designer.cs">
+      <DependentUpon>formEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLHoaDon.cs">
+    <Compile Include="formManagementOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLHoaDon.Designer.cs">
-      <DependentUpon>QLHoaDon.cs</DependentUpon>
+    <Compile Include="formManagementOrder.Designer.cs">
+      <DependentUpon>formManagementOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLi.cs">
+    <Compile Include="formStatistical.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLi.Designer.cs">
-      <DependentUpon>QuanLi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKe.Designer.cs">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <Compile Include="formStatistical.Designer.cs">
+      <DependentUpon>formStatistical.cs</DependentUpon>
     </Compile>
     <Compile Include="Voucher.cs">
       <DependentUpon>ManagementModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TaiKhoan.resx">
-      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="formAccount.resx">
+      <DependentUpon>formAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HangHoa.resx">
-      <DependentUpon>HangHoa.cs</DependentUpon>
+    <EmbeddedResource Include="formItem.resx">
+      <DependentUpon>formItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon.resx">
-      <DependentUpon>HoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="formOrder.resx">
+      <DependentUpon>formOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien.resx">
-      <DependentUpon>GiaoDien.cs</DependentUpon>
+    <EmbeddedResource Include="formMenu.resx">
+      <DependentUpon>formMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien.resx">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="formEmployee.resx">
+      <DependentUpon>formEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,14 +197,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLHoaDon.resx">
-      <DependentUpon>QLHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="formManagementOrder.resx">
+      <DependentUpon>formManagementOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLi.resx">
-      <DependentUpon>QuanLi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe.resx">
-      <DependentUpon>ThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="formStatistical.resx">
+      <DependentUpon>formStatistical.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="ManagementModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -245,9 +251,7 @@
   <ItemGroup>
     <None Include="Resources\account.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ManagementModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -259,6 +263,7 @@
       <DependentUpon>ManagementModel.edmx</DependentUpon>
       <LastGenOutput>ManagementModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\bg_dn.png" />
     <None Include="Resources\thống kê.jpg" />
   </ItemGroup>
   <ItemGroup>

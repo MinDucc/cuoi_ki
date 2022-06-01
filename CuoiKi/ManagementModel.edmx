@@ -166,6 +166,20 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="Doanhthu_tung_thang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="month" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="item_id" Type="int" Nullable="false" />
+                <Property Name="item_name" Type="nvarchar" MaxLength="100" />
+                <Property Name="tong" Type="int" />
+                <Property Name="doanhthu" Type="float" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <EntityContainer Name="ManagementDFModelStoreContainer">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
@@ -332,7 +346,11 @@
             <End Role="Lineitem" EntitySet="Lineitems" />
           </AssociationSet>
           <FunctionImport Name="Doanhthu_thang" IsComposable="true" ReturnType="Collection(ManagementDFModel.Doanhthu_thang_Result)">
+          <Parameter Name="year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Doanhthu_tung_thang" IsComposable="true" ReturnType="Collection(ManagementDFModel.Doanhthu_tung_thang_Result)">
             <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="month" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Customer">
@@ -402,6 +420,12 @@
           </ReferentialConstraint>
         </Association>
         <ComplexType Name="Doanhthu_thang_Result">
+          <Property Type="Int32" Name="item_id" Nullable="false" />
+          <Property Type="String" Name="item_name" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="tong" Nullable="true" />
+          <Property Type="Double" Name="doanhthu" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Doanhthu_tung_thang_Result">
           <Property Type="Int32" Name="item_id" Nullable="false" />
           <Property Type="String" Name="item_name" Nullable="true" MaxLength="100" />
           <Property Type="Int32" Name="tong" Nullable="true" />
@@ -499,6 +523,16 @@
           <FunctionImportMapping FunctionImportName="Doanhthu_thang" FunctionName="ManagementDFModel.Store.Doanhthu_thang">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ManagementDFModel.Doanhthu_thang_Result">
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="tong" ColumnName="tong" />
+                <ScalarProperty Name="doanhthu" ColumnName="doanhthu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Doanhthu_tung_thang" FunctionName="ManagementDFModel.Store.Doanhthu_tung_thang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ManagementDFModel.Doanhthu_tung_thang_Result">
                 <ScalarProperty Name="item_id" ColumnName="item_id" />
                 <ScalarProperty Name="item_name" ColumnName="item_name" />
                 <ScalarProperty Name="tong" ColumnName="tong" />

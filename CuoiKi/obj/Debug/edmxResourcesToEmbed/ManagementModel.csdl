@@ -130,6 +130,10 @@
     <FunctionImport Name="Doanhthu_thang" IsComposable="true" ReturnType="Collection(ManagementDFModel.Doanhthu_thang_Result)">
       <Parameter Name="year" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Doanhthu_tung_thang" IsComposable="true" ReturnType="Collection(ManagementDFModel.Doanhthu_tung_thang_Result)">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+      <Parameter Name="month" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Customer">
     <Key>
@@ -198,6 +202,12 @@
     </ReferentialConstraint>
   </Association>
   <ComplexType Name="Doanhthu_thang_Result">
+    <Property Type="Int32" Name="item_id" Nullable="false" />
+    <Property Type="String" Name="item_name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="tong" Nullable="true" />
+    <Property Type="Double" Name="doanhthu" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Doanhthu_tung_thang_Result">
     <Property Type="Int32" Name="item_id" Nullable="false" />
     <Property Type="String" Name="item_name" Nullable="true" MaxLength="100" />
     <Property Type="Int32" Name="tong" Nullable="true" />

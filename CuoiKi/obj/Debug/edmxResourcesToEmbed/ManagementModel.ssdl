@@ -161,6 +161,20 @@
       </CollectionType>
     </ReturnType>
   </Function>
+  <Function Name="Doanhthu_tung_thang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+    <Parameter Name="month" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="tong" Type="int" />
+          <Property Name="doanhthu" Type="float" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <EntityContainer Name="ManagementDFModelStoreContainer">
     <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />

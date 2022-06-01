@@ -130,14 +130,17 @@
   <data name="NhanVien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NhanVien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ROG_wallpaper_G.A.M.E.R.s-Squad_fhd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ROG_wallpaper_G.A.M.E.R.s-Squad_fhd.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="thống kê" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thống kê.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Bán hàng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bán hàng.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hoadon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,7 +148,7 @@
   <data name="Thoát" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thoát.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thống kê" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thống kê.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg_dn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_dn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

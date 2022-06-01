@@ -94,5 +94,15 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Doanhthu_tung_thang" FunctionName="ManagementDFModel.Store.Doanhthu_tung_thang">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ManagementDFModel.Doanhthu_tung_thang_Result">
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="tong" ColumnName="tong" />
+          <ScalarProperty Name="doanhthu" ColumnName="doanhthu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -38,3 +38,25 @@ C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\EntityFramework.xml
 C:\Users\ASUS\source\repos\CuoiKi\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.csproj.CopyComplete
 C:\Users\ASUS\source\repos\CuoiKi\obj\Debug\CuoiKi.ThongKe.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\bin\Debug\CuoiKi.exe.config
+C:\Users\ASUS\source\repos\CuoiKi - Copy\bin\Debug\CuoiKi.exe
+C:\Users\ASUS\source\repos\CuoiKi - Copy\bin\Debug\CuoiKi.pdb
+C:\Users\ASUS\source\repos\CuoiKi - Copy\bin\Debug\EntityFramework.dll
+C:\Users\ASUS\source\repos\CuoiKi - Copy\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ASUS\source\repos\CuoiKi - Copy\bin\Debug\EntityFramework.xml
+C:\Users\ASUS\source\repos\CuoiKi - Copy\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.Properties.Resources.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.csproj.CopyComplete
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.exe
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.pdb
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formLogin.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formItem.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formOrder.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formMenu.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formEmployee.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formStatistical.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formAccount.resources
+C:\Users\ASUS\source\repos\CuoiKi - Copy\obj\Debug\CuoiKi.formManagementOrder.resources

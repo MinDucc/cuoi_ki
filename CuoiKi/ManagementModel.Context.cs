@@ -45,5 +45,19 @@ namespace CuoiKi
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Doanhthu_thang_Result>("[ManagementDFContext].[Doanhthu_thang](@year)", yearParameter);
         }
+    
+        [DbFunction("ManagementDFContext", "Doanhthu_tung_thang")]
+        public virtual IQueryable<Doanhthu_tung_thang_Result> Doanhthu_tung_thang(Nullable<int> year, Nullable<int> month)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Doanhthu_tung_thang_Result>("[ManagementDFContext].[Doanhthu_tung_thang](@year, @month)", yearParameter, monthParameter);
+        }
     }
 }
