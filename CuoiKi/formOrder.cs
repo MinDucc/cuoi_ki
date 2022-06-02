@@ -528,11 +528,11 @@ namespace CuoiKi
         
         private void In_hoadon_Click(object sender, EventArgs e)
         {
-            //if (Saved == true)
-            //    InHoaDon();
-            //else
-            //    MessageBox.Show("Bạn chưa lưu hóa đơn này");
-            InHoaDon();            
+            if (Saved == true)
+                InHoaDon();
+            else
+                MessageBox.Show("Bạn chưa lưu hóa đơn này");
+
         }
     }
 }
