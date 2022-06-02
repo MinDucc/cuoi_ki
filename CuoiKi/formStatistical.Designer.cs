@@ -41,7 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbx_thang = new System.Windows.Forms.ComboBox();
+            this.dgv_show = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_show)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
@@ -51,13 +53,13 @@
             this.chart1.Dock = System.Windows.Forms.DockStyle.Bottom;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 82);
+            this.chart1.Location = new System.Drawing.Point(0, 365);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Doanh thu";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(992, 676);
+            this.chart1.Size = new System.Drawing.Size(992, 393);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -166,12 +168,23 @@
             this.cbx_thang.Size = new System.Drawing.Size(139, 24);
             this.cbx_thang.TabIndex = 10;
             // 
-            // ThongKe
+            // dgv_show
+            // 
+            this.dgv_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_show.Location = new System.Drawing.Point(30, 94);
+            this.dgv_show.Name = "dgv_show";
+            this.dgv_show.RowHeadersWidth = 51;
+            this.dgv_show.RowTemplate.Height = 24;
+            this.dgv_show.Size = new System.Drawing.Size(834, 228);
+            this.dgv_show.TabIndex = 11;
+            // 
+            // formStatistical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(992, 758);
+            this.Controls.Add(this.dgv_show);
             this.Controls.Add(this.cbx_thang);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -182,12 +195,13 @@
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_dt_nam);
             this.Controls.Add(this.chart1);
-            this.Name = "ThongKe";
+            this.Name = "formStatistical";
             this.Text = "ThongKe";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ThongKe_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ThongKe_FormClosed);
             this.Load += new System.EventHandler(this.ThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_show)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +219,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbx_thang;
+        private System.Windows.Forms.DataGridView dgv_show;
     }
 }

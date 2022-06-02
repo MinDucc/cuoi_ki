@@ -28,6 +28,11 @@ namespace CuoiKi.DAL
             }
             db.SaveChanges();
         }
+        public int  Get_Order_ID()
+        {
+            var id = db.Orders.Select(c => c.order_id);
+            return id.ToList().Last();
+        }    
         public void Add_LineItem(int item_id, int sl)
         {
             var id = db.Orders.Select(c => c.order_id);

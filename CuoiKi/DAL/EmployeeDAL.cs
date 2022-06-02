@@ -40,6 +40,13 @@ namespace CuoiKi.DAL
             }
             return lstEmloyee;
         }
+        public string Get_Employee_Name(int id)
+        {
+            var result = from c in db.Employees
+                         where c.employee_id == id
+                         select c;
+            return result.FirstOrDefault().employee_name;
+        }
         public bool Add_Employee(Employee employee,Account acc)
         {
             try

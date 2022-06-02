@@ -20,6 +20,11 @@ namespace CuoiKi.BLL
         {
             OrderDAL.Instance.Update_Quantity(id, sl);
         }
+
+        public int Get_Order_ID()
+        {
+            return OrderDAL.Instance.Get_Order_ID();
+        }    
         public void Add_LineItem(int item_id,int sl)
         {
             OrderDAL.Instance.Add_LineItem(item_id, sl);

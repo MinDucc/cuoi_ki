@@ -6,7 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+
+
 using CuoiKi.BLL;
 
 namespace CuoiKi
@@ -15,6 +18,8 @@ namespace CuoiKi
     {
         private int employee_id;
         List<Item> ListItem;
+        private double TongTien = 0;
+        private int Order_ID;
         public formOrder(int id)
         {
             InitializeComponent();
@@ -89,7 +94,7 @@ namespace CuoiKi
             tb_sl.Text = "";
             tb_dongia.Text = "";
         }
-        private double TongTien = 0;
+        
         private void btn_them_Click(object sender, EventArgs e)
         {
             if (lbl_id.Text == "")
@@ -190,6 +195,7 @@ namespace CuoiKi
 
 
             OrderBLL.Instance.Add_Order(order, customer);
+            Order_ID = OrderBLL.Instance.Get_Order_ID();
             /// Add LineItem           
             foreach (ListViewItem item in lv_item.Items)
             {
@@ -279,7 +285,9 @@ namespace CuoiKi
         {
             lv_item.Items.Clear();
             Saved = false;
-            
+
+
+
         }
         private void Compute_Total(double price)
         {
@@ -302,11 +310,8 @@ namespace CuoiKi
         private void tbx_ma_kh_TextChanged(object sender, EventArgs e)
         {
             try
-            {
-                if(tbx_ma_kh.Text=="")
-                {
-                    ReLoad();
-                }    
+            {              
+                ReLoad();                   
                 Customer cus = OrderBLL.Instance.Get_Customer_Infor(int.Parse(tbx_ma_kh.Text));
                 if (cus != null)
                 {
@@ -363,6 +368,171 @@ namespace CuoiKi
             {
                 MessageBox.Show("Vui lòng nhập số");
             }
+        }
+        
+        public void InHoaDon()
+        {
+            string filePath = "";
+            // tạo SaveFileDialog để lưu file excel
+            SaveFileDialog dialog = new SaveFileDialog();
+                
+            // chỉ lọc ra các file có định dạng Excel
+            dialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
+            dialog.Title = "Hóa Đơn " + OrderBLL.Instance.Get_Order_ID().ToString();
+            //Nếu mở file và chọn nơi lưu file thành công sẽ lưu đường dẫn lại dùng
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+
+                filePath = dialog.FileName;
+            }
+
+            // nếu đường dẫn null hoặc rỗng thì báo không hợp lệ và return hàm
+            if (string.IsNullOrEmpty(filePath))
+            {
+                MessageBox.Show("Đường dẫn báo cáo không hợp lệ");
+                return;
+            }
+
+            Microsoft.Office.Interop.Excel.Application exApp;
+            Microsoft.Office.Interop.Excel.Workbook workBook;
+            Microsoft.Office.Interop.Excel.Worksheet workSheet;
+            try
+            {
+                //Tạo đối tượng COM.
+                exApp = new Microsoft.Office.Interop.Excel.Application();
+                exApp.Visible = false;
+                exApp.DisplayAlerts = false;
+                //workBook = exApp.Workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+
+                workBook = exApp.Workbooks.Add(Type.Missing);
+                workSheet = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Sheets["Sheet1"];
+
+                workSheet.Name = "Hóa đơn bán hàng";
+                workSheet.Cells.Style.Font.Size = 12;
+                workSheet.Cells.Style.Font.Name = "Calibri";
+
+                workSheet.Cells[1, 1].Value = "Cửa Hàng Tiện Lợi";
+                workSheet.Cells[1, 1].Font.Size = 14;
+                workSheet.Cells[1, 1].Font.Bold = true;
+                workSheet.Cells[2, 1].Value = "Địa Chỉ: Thủ Đức, Hồ Chí Minh";
+                workSheet.Cells[3, 1].Value = "Điện thoại: 1234567";
+                workSheet.Cells[4, 1].Value = "HÓA ĐƠN BÁN HÀNG";
+                workSheet.Cells[4, 1].Font.Size = 20;
+                workSheet.Cells[4, 1].Font.Bold = true;
+
+                workSheet.Cells[5, 1].Value = "Ngày xuất phiếu:";
+                workSheet.Cells[5, 1].Font.Bold = true;
+                workSheet.Cells[5, 3].Value = DateTime.Now;
+
+                workSheet.Cells[6, 1].Value = "Mã hóa đơn:";
+                workSheet.Cells[6, 1].Font.Bold = true;
+                workSheet.Cells[6, 3].Value = OrderBLL.Instance.Get_Order_ID().ToString();
+
+                workSheet.Cells[7, 1].Value = "Mã khách hàng:";
+                workSheet.Cells[7, 1].Font.Bold = true;
+                workSheet.Cells[7, 3].Value = tbx_ma_kh.Text;
+
+                workSheet.Cells[8, 1].Value = "Tên khách hàng:";
+                workSheet.Cells[8, 1].Font.Bold = true;
+                workSheet.Cells[8, 3].Value = tb_tenkhach.Text;
+
+                workSheet.Cells[9, 1].Value = "Địa chỉ:";
+                workSheet.Cells[9, 1].Font.Bold = true;
+                workSheet.Cells[9, 3].Value = tbx_diachi.Text;
+
+                workSheet.Cells[10, 1].Value = "Nhân viên:";
+                workSheet.Cells[10, 1].Font.Bold = true;
+                workSheet.Cells[10, 3].Value = EmployeeBLL.Instance.Get_Employee_Name(employee_id);
+
+                workSheet.Cells[11, 1].Value = "Tổng cộng:";
+                workSheet.Cells[11, 1].Font.Bold = true;
+                workSheet.Cells[11, 3].Value = lbl_TongCong.Text;
+
+                workSheet.Cells[12, 1].Value = "Giảm:";
+                workSheet.Cells[12, 1].Font.Bold = true;
+                workSheet.Cells[12, 3].Value = lbl_giam.Text;
+
+                workSheet.Cells[13, 1].Value = "Thành tiền:";
+                workSheet.Cells[13, 1].Font.Bold = true;
+                workSheet.Cells[13, 3].Value = lbl_thanhtien.Text;
+
+                workSheet.Cells[14, 1].Value = "Tiền nhận:";
+                workSheet.Cells[14, 1].Font.Bold = true;
+                workSheet.Cells[14, 3].Value = tb_tiennhan.Text;
+
+                workSheet.Cells[15, 1].Value = "Tiền thừa:";
+                workSheet.Cells[15, 1].Font.Bold = true;
+                workSheet.Cells[15, 3].Value = lbl_tienthua.Text;
+
+                for (int i = 1; i < lv_item.Columns.Count; i++)
+                {                    
+                    workSheet.Cells[17, i] = lv_item.Columns[i].Text;
+                    workSheet.Cells[17, i].Font.Bold = true;
+                    workSheet.Cells[17, i].Borders.LineStyle = true;                                     
+                    workSheet.Cells[17, i].ColumnWidth = 15;
+                  
+                }
+
+                int lasti = 0, lastj = 0;
+                for (int i = 0; i < lv_item.Items.Count; i++)
+                {
+                    lasti = i;
+                    for (int j = 1; j < lv_item.Columns.Count; j++)
+                    {
+                        lastj = j;
+                        workSheet.Cells[i + 18, j] = lv_item.Items[i].SubItems[j].Text;
+                        workSheet.Cells[i + 18, j].Borders.LineStyle = true;
+                    }
+                }
+                workSheet.Cells[lasti + 19, lastj - 1] = "Tổng tiền:";
+                workSheet.Cells[lasti + 19, lastj] = lbl_TongCong.Text;
+
+                workBook.Activate();
+                workBook.SaveAs(filePath);
+                workBook.Save();
+                workBook.Close();
+                exApp.Quit();
+                bool flag = SaveAsPdf(filePath);
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workBook = null;
+                workSheet = null;
+            }
+        }
+        private bool SaveAsPdf(string saveAsLocation)
+        {
+            string saveas = (saveAsLocation.Split('.')[0]) + ".pdf";
+            try
+            {
+                Spire.Xls.Workbook workbook = new Spire.Xls.Workbook();
+                workbook.LoadFromFile(saveAsLocation);
+
+                //Save the document in PDF format
+                workbook.SaveToFile(saveas, Spire.Xls.FileFormat.PDF);
+                System.Diagnostics.Process.Start(saveas);
+                Path.GetTempPath();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        
+        private void In_hoadon_Click(object sender, EventArgs e)
+        {
+            //if (Saved == true)
+            //    InHoaDon();
+            //else
+            //    MessageBox.Show("Bạn chưa lưu hóa đơn này");
+            InHoaDon();            
         }
     }
 }

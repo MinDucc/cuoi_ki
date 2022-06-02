@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_giam = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbl_thanhtien = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lbl_tienthua = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tbx_diachi = new System.Windows.Forms.TextBox();
             this.tbx_ma_kh = new System.Windows.Forms.TextBox();
@@ -39,12 +45,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_luu = new System.Windows.Forms.Button();
-            this.lbl_tienthua = new System.Windows.Forms.Label();
             this.tb_tiennhan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.cbx_id = new System.Windows.Forms.ComboBox();
@@ -66,10 +70,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label12 = new System.Windows.Forms.Label();
-            this.lbl_thanhtien = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lbl_giam = new System.Windows.Forms.Label();
+            this.In_hoadon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.In_hoadon);
             this.panel1.Controls.Add(this.lbl_giam);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.lbl_thanhtien);
@@ -104,6 +106,42 @@
             this.panel1.Size = new System.Drawing.Size(371, 484);
             this.panel1.TabIndex = 0;
             // 
+            // lbl_giam
+            // 
+            this.lbl_giam.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lbl_giam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_giam.Location = new System.Drawing.Point(169, 271);
+            this.lbl_giam.Name = "lbl_giam";
+            this.lbl_giam.Size = new System.Drawing.Size(180, 25);
+            this.lbl_giam.TabIndex = 24;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(13, 271);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(126, 26);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Giảm";
+            // 
+            // lbl_thanhtien
+            // 
+            this.lbl_thanhtien.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lbl_thanhtien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_thanhtien.Location = new System.Drawing.Point(168, 308);
+            this.lbl_thanhtien.Name = "lbl_thanhtien";
+            this.lbl_thanhtien.Size = new System.Drawing.Size(181, 25);
+            this.lbl_thanhtien.TabIndex = 22;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(8, 308);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 26);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Thành tiền";
+            // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,6 +150,24 @@
             this.label11.Size = new System.Drawing.Size(78, 26);
             this.label11.TabIndex = 19;
             this.label11.Text = "Địa chỉ";
+            // 
+            // lbl_tienthua
+            // 
+            this.lbl_tienthua.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lbl_tienthua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_tienthua.Location = new System.Drawing.Point(168, 348);
+            this.lbl_tienthua.Name = "lbl_tienthua";
+            this.lbl_tienthua.Size = new System.Drawing.Size(181, 25);
+            this.lbl_tienthua.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 348);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tiền Thừa";
             // 
             // label10
             // 
@@ -141,7 +197,7 @@
             // 
             // btn_new_hoadon
             // 
-            this.btn_new_hoadon.Location = new System.Drawing.Point(111, 387);
+            this.btn_new_hoadon.Location = new System.Drawing.Point(187, 392);
             this.btn_new_hoadon.Name = "btn_new_hoadon";
             this.btn_new_hoadon.Size = new System.Drawing.Size(130, 31);
             this.btn_new_hoadon.TabIndex = 15;
@@ -195,15 +251,6 @@
             this.btn_luu.UseVisualStyleBackColor = true;
             this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
-            // lbl_tienthua
-            // 
-            this.lbl_tienthua.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lbl_tienthua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_tienthua.Location = new System.Drawing.Point(168, 348);
-            this.lbl_tienthua.Name = "lbl_tienthua";
-            this.lbl_tienthua.Size = new System.Drawing.Size(181, 25);
-            this.lbl_tienthua.TabIndex = 10;
-            // 
             // tb_tiennhan
             // 
             this.tb_tiennhan.Location = new System.Drawing.Point(169, 98);
@@ -240,15 +287,6 @@
             this.label2.Size = new System.Drawing.Size(128, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tổng Cộng";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 348);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tiền Thừa";
             // 
             // panel2
             // 
@@ -452,43 +490,17 @@
             this.columnHeader5.Text = "Thành Tiền";
             this.columnHeader5.Width = 146;
             // 
-            // label12
+            // In_hoadon
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(8, 308);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 26);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Thành tiền";
+            this.In_hoadon.Location = new System.Drawing.Point(15, 398);
+            this.In_hoadon.Name = "In_hoadon";
+            this.In_hoadon.Size = new System.Drawing.Size(124, 30);
+            this.In_hoadon.TabIndex = 25;
+            this.In_hoadon.Text = "In hóa đơn";
+            this.In_hoadon.UseVisualStyleBackColor = true;
+            this.In_hoadon.Click += new System.EventHandler(this.In_hoadon_Click);
             // 
-            // lbl_thanhtien
-            // 
-            this.lbl_thanhtien.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lbl_thanhtien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_thanhtien.Location = new System.Drawing.Point(168, 308);
-            this.lbl_thanhtien.Name = "lbl_thanhtien";
-            this.lbl_thanhtien.Size = new System.Drawing.Size(181, 25);
-            this.lbl_thanhtien.TabIndex = 22;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 271);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 26);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Giảm";
-            // 
-            // lbl_giam
-            // 
-            this.lbl_giam.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lbl_giam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_giam.Location = new System.Drawing.Point(169, 271);
-            this.lbl_giam.Name = "lbl_giam";
-            this.lbl_giam.Size = new System.Drawing.Size(180, 25);
-            this.lbl_giam.TabIndex = 24;
-            // 
-            // HoaDon
+            // formOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -496,7 +508,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "HoaDon";
+            this.Name = "formOrder";
             this.Text = "Hóa đơn mới";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HoaDon_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HoaDon_FormClosed);
@@ -554,6 +566,7 @@
         private System.Windows.Forms.Label lbl_thanhtien;
         private System.Windows.Forms.Label lbl_giam;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button In_hoadon;
     }
 }
 

@@ -20,6 +20,10 @@ namespace CuoiKi.BLL
         {
             return EmployeeDAL.Instance.List_Employee();
         } 
+        public string Get_Employee_Name(int id)
+        {
+            return EmployeeDAL.Instance.Get_Employee_Name(id);
+        }    
         public string Format_Name(string name)
         {
             char[] charArray = name.ToCharArray();
